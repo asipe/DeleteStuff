@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30110.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeleteStuff.Core", "DeleteStuff.Core\DeleteStuff.Core.csproj", "{772D57D6-46D8-46DD-9175-20BBDDB2F321}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeleteStuff.Console", "DeleteStuff.Console\DeleteStuff.Console.csproj", "{AE30BCFA-9BF9-4FBA-9B90-8AEC83B4DE13}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DeleteStuff.Properties", "DeleteStuff.Properties", "{3BAD1264-EC10-4F7D-A284-690B91DB6759}"
+	ProjectSection(SolutionItems) = preProject
+		DeleteStuff.Properties\AssemblyInfo.cs = DeleteStuff.Properties\AssemblyInfo.cs
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{772D57D6-46D8-46DD-9175-20BBDDB2F321}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{772D57D6-46D8-46DD-9175-20BBDDB2F321}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{772D57D6-46D8-46DD-9175-20BBDDB2F321}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{772D57D6-46D8-46DD-9175-20BBDDB2F321}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE30BCFA-9BF9-4FBA-9B90-8AEC83B4DE13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE30BCFA-9BF9-4FBA-9B90-8AEC83B4DE13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE30BCFA-9BF9-4FBA-9B90-8AEC83B4DE13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE30BCFA-9BF9-4FBA-9B90-8AEC83B4DE13}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
