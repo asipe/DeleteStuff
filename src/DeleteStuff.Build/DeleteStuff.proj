@@ -9,6 +9,7 @@
   <ItemGroup>
     <Stage1 Include="DeleteStuff.Core\DeleteStuff.Core.proj" />
     <Stage2 Include="DeleteStuff.UnitTests\DeleteStuff.UnitTests.proj" />
+    <Stage2 Include="DeleteStuff.Console\DeleteStuff.Console.proj" />
   </ItemGroup>
   
   <Target Name="BuildStage1" Outputs="%(Frameworks.Identity)">
