@@ -16,6 +16,7 @@
     <Reference Include="System.Core" />
     <Reference Include="$(DebugDir)\DeleteStuff.Core\DeleteStuff.Core.dll" />
     <Reference Include="$(PackagesDir)\nunit\lib\nunit.framework.dll" />
+    <Reference Include="$(PackagesDir)\snarfz\lib\net45\snarfz.core.dll" />
   </ItemGroup>
 
   <ItemGroup>
