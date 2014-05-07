@@ -14,6 +14,11 @@ namespace DeleteStuff.IntegrationTests.Infrastructure {
       CopyFiles();
     }
 
+    public void TearDown() {
+      if (Directory.Exists(mInfo.TestWorkingDir))
+        Directory.Delete(mInfo.TestWorkingDir, true);
+    }
+
     private void CopyFiles() {
       var cfg = new Config(mInfo.ConsoleDebugDir) {ScanType = ScanType.FilesOnly};
       cfg.OnFile += (s, a) => File.Copy(a.Path, Path.Combine(mInfo.TestWorkingDir, Path.GetFileName(a.Path)));
@@ -29,11 +34,6 @@ namespace DeleteStuff.IntegrationTests.Infrastructure {
     private void Validate() {
       if (Directory.Exists(mInfo.TestWorkingDir))
         throw new Exception(string.Format("{0} already exists", mInfo.TestWorkingDir));
-    }
-
-    public void TearDown() {
-      if (Directory.Exists(mInfo.TestWorkingDir))
-        Directory.Delete(mInfo.TestWorkingDir, true);
     }
 
     private readonly PathInfo mInfo;
