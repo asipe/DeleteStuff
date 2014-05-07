@@ -53,9 +53,17 @@ function RunUnitTests() {
   Write-Host -ForegroundColor Cyan '----------------------------------'
 }
 
+function RunIntegrationTests() {
+  Write-Host -ForegroundColor Cyan '-------Debug Integration Tests (4.5)-----------'
+  .\thirdparty\packages\common\nunit.runners\tools\nunit-console.exe .\debug\net-4.5\DeleteStuff.IntegrationTests\DeleteStuff.IntegrationTests.dll /nologo /framework:net-4.5 | Write-Host
+  CheckLastExitCode
+  Write-Host -ForegroundColor Cyan '----------------------------------'
+}
+
 function RunAllTests() {
   RunUnitTests
   RunUnitTestsVS
+  RunIntegrationTests
 }
 
 function Build() {
@@ -130,6 +138,7 @@ function Minion {
         'clean' { Clean }
         'run.unit.tests.vs' { RunUnitTestsVS }
         'run.unit.tests' { RunUnitTests }
+        'run.integration.tests' { RunIntegrationTests }
         'run.all.tests' { RunAllTests }
         'build.all' { Build }
         'build.nuget.packages' { BuildNugetPackages }
