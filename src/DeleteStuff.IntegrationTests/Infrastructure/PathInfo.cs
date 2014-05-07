@@ -8,8 +8,10 @@ namespace DeleteStuff.IntegrationTests.Infrastructure {
       ConsoleDebugDir = Path.Combine(DebugDir, @"net-4.5\DeleteStuff\");
       TestRootDir = Path.Combine(Root, @"integrationtestworking");
       TestWorkingDir = Path.Combine(TestRootDir, id);
+      ExePath = Path.Combine(TestWorkingDir, "DeleteStuff.exe");
     }
 
+    public string ExePath{get;private set;}
     public string TestRootDir{get;private set;}
     public string Root{get;private set;}
     public string DebugDir{get;private set;}

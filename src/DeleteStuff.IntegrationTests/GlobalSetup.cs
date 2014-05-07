@@ -5,17 +5,19 @@ using SupaCharge.Core.OID;
 namespace DeleteStuff.IntegrationTests {
   [SetUpFixture]
   public sealed class GlobalSetup {
+    public static TestEnvironment TestEnvironment{get;private set;}
+    public static PathInfo PathInfo{get;private set;}
+
     [SetUp]
     public void DoSetup() {
-      mTestEnvironment = new TestEnvironment(new PathInfo(new DevelopmentRoot().Get(), new GuidOIDProvider().GetID()));
-      mTestEnvironment.Setup();
+      PathInfo = new PathInfo(new DevelopmentRoot().Get(), new GuidOIDProvider().GetID());
+      TestEnvironment = new TestEnvironment(PathInfo);
+      TestEnvironment.Setup();
     }
 
     [TearDown]
     public void DoTearDown() {
-      mTestEnvironment.TearDown();
+      TestEnvironment.TearDown();
     }
-
-    private TestEnvironment mTestEnvironment;
   }
 }
