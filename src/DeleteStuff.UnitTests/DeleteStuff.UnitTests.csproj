@@ -47,8 +47,15 @@
     <Compile Include="..\DeleteStuff.Properties\AssemblyInfo.cs">
       <Link>AssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="Core\External\ExecutionConfigTest.cs" />
+    <Compile Include="Core\External\PathSpecTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SampleTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DeleteStuff.Core\DeleteStuff.Core.csproj">
+      <Project>{772D57D6-46D8-46DD-9175-20BBDDB2F321}</Project>
+      <Name>DeleteStuff.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

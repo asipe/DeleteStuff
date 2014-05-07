@@ -38,6 +38,8 @@
     <Compile Include="..\DeleteStuff.Properties\AssemblyInfo.cs">
       <Link>AssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="External\ExecutionConfig.cs" />
+    <Compile Include="External\PathSpec.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
