@@ -49,7 +49,7 @@
     <Compile Include="App\IApplication.cs" />
     <Compile Include="Command\ConfigCommand.cs" />
     <Compile Include="Command\ICommand.cs" />
-    <Compile Include="Command\ListConfigCommand.cs" />
+    <Compile Include="Command\ConfigListCommand.cs" />
     <Compile Include="Command\UnknownCommand.cs" />
     <Compile Include="DeleteStuffException.cs" />
     <Compile Include="External\ExecutionConfig.cs" />

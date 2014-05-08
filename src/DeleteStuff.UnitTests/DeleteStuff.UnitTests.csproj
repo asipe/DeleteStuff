@@ -54,7 +54,7 @@
     <Compile Include="BaseTestCase.cs" />
     <Compile Include="Core\App\DeleteStuffApplicationTest.cs" />
     <Compile Include="Core\Command\ConfigCommandTest.cs" />
-    <Compile Include="Core\Command\ListConfigCommandTest.cs" />
+    <Compile Include="Core\Command\ConfigListCommandTest.cs" />
     <Compile Include="Core\Command\UnknownCommandTest.cs" />
     <Compile Include="Core\External\ExecutionConfigTest.cs" />
     <Compile Include="Core\External\PathSpecTest.cs" />

@@ -1,15 +1,15 @@
 ﻿using Autofac;
-using DeleteStuff.Core.Command;
+using DeleteStuff.Core.Utility;
 
 namespace DeleteStuff.Core.ObjectFactory.Module {
-  public class ListConfigCommandModule : Autofac.Module {
+  public class SerializerModule : Autofac.Module {
     protected override void Load(ContainerBuilder builder) {
       base.Load(builder);
 
       builder
-        .RegisterType<ConfigListCommand>()
+        .RegisterType<JsonSerializer>()
         .InstancePerLifetimeScope()
-        .Keyed<ICommand>("config-list");
+        .As<ISerializer>();
     }
   }
 }

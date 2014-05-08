@@ -6,7 +6,7 @@ using NUnit.Framework;
 
 namespace DeleteStuff.UnitTests.Core.Command {
   [TestFixture]
-  public class ListConfigCommandTest : BaseTestCase {
+  public class ConfigListCommandTest : BaseTestCase {
     [Test]
     public void TestExecuteNotifiesAndThrows() {
       mObserver.Setup(o => o.OnError("deletestuff.json could not be found"));
@@ -17,10 +17,10 @@ namespace DeleteStuff.UnitTests.Core.Command {
     [SetUp]
     public void DoSetup() {
       mObserver = Mok<IObserver>();
-      mCmd = new ListConfigCommand(mObserver.Object);
+      mCmd = new ConfigListCommand(mObserver.Object);
     }
 
     private Mock<IObserver> mObserver;
-    private ListConfigCommand mCmd;
+    private ConfigListCommand mCmd;
   }
 }

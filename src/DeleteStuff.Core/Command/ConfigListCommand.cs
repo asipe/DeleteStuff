@@ -1,8 +1,8 @@
 ﻿using DeleteStuff.Core.Output;
 
 namespace DeleteStuff.Core.Command {
-  public class ListConfigCommand : ICommand {
-    public ListConfigCommand(IObserver observer) {
+  public class ConfigListCommand : ICommand {
+    public ConfigListCommand(IObserver observer) {
       mObserver = observer;
     }
 
