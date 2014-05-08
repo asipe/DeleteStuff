@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\..\thirdparty\packages\net-4.5\Autofac\lib\net40\Autofac.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
@@ -38,10 +41,19 @@
     <Compile Include="..\DeleteStuff.Properties\AssemblyInfo.cs">
       <Link>AssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="App\DeleteStuffApplication.cs" />
+    <Compile Include="App\IApplication.cs" />
+    <Compile Include="DeleteStuffException.cs" />
     <Compile Include="External\ExecutionConfig.cs" />
     <Compile Include="External\PathSpec.cs" />
+    <Compile Include="ObjectFactory\Factory.cs" />
+    <Compile Include="ObjectFactory\IFactory.cs" />
+    <Compile Include="ObjectFactory\IModuleConfiguration.cs" />
+    <Compile Include="ObjectFactory\Module\ApplicationModule.cs" />
+    <Compile Include="ObjectFactory\Module\DefaultModuleConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

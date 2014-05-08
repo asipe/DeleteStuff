@@ -46,6 +46,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DeleteStuff.Core\DeleteStuff.Core.csproj">
+      <Project>{772d57d6-46d8-46dd-9175-20bbddb2f321}</Project>
+      <Name>DeleteStuff.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
