@@ -9,8 +9,10 @@ namespace DeleteStuff.IntegrationTests.Infrastructure {
       TestRootDir = Path.Combine(Root, @"integrationtestworking");
       TestWorkingDir = Path.Combine(TestRootDir, id);
       ExePath = Path.Combine(TestWorkingDir, "DeleteStuff.exe");
+      JsonConfigPath = Path.Combine(TestWorkingDir, "DeleteStuff.json");
     }
 
+    public string JsonConfigPath{get;private set;}
     public string ExePath{get;private set;}
     public string TestRootDir{get;private set;}
     public string Root{get;private set;}
