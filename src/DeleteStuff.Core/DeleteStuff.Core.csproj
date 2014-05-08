@@ -51,6 +51,9 @@
     <Compile Include="ObjectFactory\IModuleConfiguration.cs" />
     <Compile Include="ObjectFactory\Module\ApplicationModule.cs" />
     <Compile Include="ObjectFactory\Module\DefaultModuleConfiguration.cs" />
+    <Compile Include="ObjectFactory\Module\OutputModule.cs" />
+    <Compile Include="Output\ConsoleOutput\ConsoleWriter.cs" />
+    <Compile Include="Output\IObserver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
