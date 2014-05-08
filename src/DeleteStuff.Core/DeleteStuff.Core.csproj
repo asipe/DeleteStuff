@@ -43,6 +43,10 @@
     </Compile>
     <Compile Include="App\DeleteStuffApplication.cs" />
     <Compile Include="App\IApplication.cs" />
+    <Compile Include="Command\ConfigCommand.cs" />
+    <Compile Include="Command\ICommand.cs" />
+    <Compile Include="Command\ListConfigCommand.cs" />
+    <Compile Include="Command\UnknownCommand.cs" />
     <Compile Include="DeleteStuffException.cs" />
     <Compile Include="External\ExecutionConfig.cs" />
     <Compile Include="External\PathSpec.cs" />
@@ -50,8 +54,11 @@
     <Compile Include="ObjectFactory\IFactory.cs" />
     <Compile Include="ObjectFactory\IModuleConfiguration.cs" />
     <Compile Include="ObjectFactory\Module\ApplicationModule.cs" />
+    <Compile Include="ObjectFactory\Module\ConfigCommandModule.cs" />
     <Compile Include="ObjectFactory\Module\DefaultModuleConfiguration.cs" />
+    <Compile Include="ObjectFactory\Module\ListConfigCommandModule.cs" />
     <Compile Include="ObjectFactory\Module\OutputModule.cs" />
+    <Compile Include="ObjectFactory\Module\UnknownCommandModule.cs" />
     <Compile Include="Output\ConsoleOutput\ConsoleWriter.cs" />
     <Compile Include="Output\IObserver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

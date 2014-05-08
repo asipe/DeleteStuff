@@ -3,7 +3,7 @@ using NUnit.Framework;
 
 namespace DeleteStuff.UnitTests.Core.External {
   [TestFixture]
-  public class ExecutionConfigTest {
+  public class ExecutionConfigTest : BaseTestCase {
     [Test]
     public void TestDefaults() {
       var spec = new ExecutionConfig();

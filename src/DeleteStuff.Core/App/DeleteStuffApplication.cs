@@ -1,16 +1,16 @@
-﻿using DeleteStuff.Core.Output;
+﻿using Autofac.Features.Indexed;
+using DeleteStuff.Core.Command;
 
 namespace DeleteStuff.Core.App {
   public class DeleteStuffApplication : IApplication {
-    public DeleteStuffApplication(IObserver observer) {
-      mObserver = observer;
+    public DeleteStuffApplication(IIndex<string, ICommand> index) {
+      mIndex = index;
     }
 
     public void Execute(params string[] args) {
-      mObserver.OnError("deletestuff.json could not be found");
-      throw new DeleteStuffException("deletestuff.json could not be found");
+      mIndex[args[0]].Execute(args);
     }
 
-    private readonly IObserver mObserver;
+    private readonly IIndex<string, ICommand> mIndex;
   }
 }

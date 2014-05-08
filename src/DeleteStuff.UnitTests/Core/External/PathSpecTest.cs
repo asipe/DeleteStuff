@@ -3,7 +3,7 @@ using NUnit.Framework;
 
 namespace DeleteStuff.UnitTests.Core.External {
   [TestFixture]
-  public class PathSpecTest {
+  public class PathSpecTest : BaseTestCase {
     [Test]
     public void TestDefaults() {
       var spec = new PathSpec();
