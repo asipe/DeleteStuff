@@ -16,6 +16,7 @@
     <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="$(PackagesDir)\autofac\lib\net40\autofac.dll" />
+    <Reference Include="$(PackagesDir)\newtonsoft.json\lib\net45\Newtonsoft.Json.dll" />    
   </ItemGroup>
 
   <ItemGroup>

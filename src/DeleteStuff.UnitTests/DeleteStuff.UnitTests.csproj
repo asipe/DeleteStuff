@@ -58,6 +58,7 @@
     <Compile Include="Core\Command\UnknownCommandTest.cs" />
     <Compile Include="Core\External\ExecutionConfigTest.cs" />
     <Compile Include="Core\External\PathSpecTest.cs" />
+    <Compile Include="Core\Utility\JsonSerializerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
