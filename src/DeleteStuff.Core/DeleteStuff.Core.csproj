@@ -62,6 +62,7 @@
     <Compile Include="ObjectFactory\Module\DefaultModuleConfiguration.cs" />
     <Compile Include="ObjectFactory\Module\ListConfigCommandModule.cs" />
     <Compile Include="ObjectFactory\Module\OutputModule.cs" />
+    <Compile Include="ObjectFactory\Module\SerializerModule.cs" />
     <Compile Include="ObjectFactory\Module\UnknownCommandModule.cs" />
     <Compile Include="Output\ConsoleOutput\ConsoleWriter.cs" />
     <Compile Include="Output\IObserver.cs" />
