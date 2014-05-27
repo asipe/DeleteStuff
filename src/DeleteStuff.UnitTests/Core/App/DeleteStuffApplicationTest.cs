@@ -9,19 +9,29 @@ namespace DeleteStuff.UnitTests.Core.App {
   public class DeleteStuffApplicationTest : BaseTestCase {
     [Test]
     public void TestExecute() {
-      var cmd = Mok<ICommand>();
-      mIndex.Setup(i => i["config"]).Returns(cmd.Object);
-      cmd.Setup(c => c.Execute("config", "list"));
+      mIndex.Setup(i => i.TryGetValue("config", out mCommandImpl)).Returns(true);
+      mCommand.Setup(c => c.Execute("config", "list"));
       mApp.Execute("config", "list");
+    }
+
+    [Test]
+    public void TestExecuteWithNoCommandDelegatesToUnknownCommand() {
+      mIndex.Setup(i => i.TryGetValue("unknown", out mCommandImpl)).Returns(true);
+      mCommand.Setup(c => c.Execute());
+      mApp.Execute();
     }
 
     [SetUp]
     public void DoSetup() {
+      mCommand = Mok<ICommand>();
+      mCommandImpl = mCommand.Object;
       mIndex = Mok<IIndex<string, ICommand>>();
       mApp = new DeleteStuffApplication(mIndex.Object);
     }
 
     private Mock<IIndex<string, ICommand>> mIndex;
     private DeleteStuffApplication mApp;
+    private Mock<ICommand> mCommand;
+    private ICommand mCommandImpl;
   }
 }

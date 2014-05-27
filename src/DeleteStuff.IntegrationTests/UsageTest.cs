@@ -5,6 +5,22 @@ namespace DeleteStuff.IntegrationTests {
   [TestFixture]
   public class UsageTest : BaseTest {
     [Test]
+    public void TestExecuteWithNoCommandGiven() {
+      var result = Helper.ProcessExecutor.Start();
+      Assert.That(result.ExitCode, Is.EqualTo(1));
+      Assert.That(result.StandardOutput, Is.Empty);
+      Assert.That(result.StandardError, Is.EqualTo(Helper.BuildOutput("Missing Command")));
+    }
+    
+    [Test]
+    public void TestExecuteWithUnknownCommand() {
+      var result = Helper.ProcessExecutor.Start("cconfig");
+      Assert.That(result.ExitCode, Is.EqualTo(1));
+      Assert.That(result.StandardOutput, Is.Empty);
+      Assert.That(result.StandardError, Is.EqualTo(Helper.BuildOutput("Unknown Command: cconfig")));
+    }
+
+    [Test]
     public void TestListConfigurationWhenNoConfigurationFileFound() {
       var result = Helper.ProcessExecutor.Start("config", "list");
       Assert.That(result.ExitCode, Is.EqualTo(1));
