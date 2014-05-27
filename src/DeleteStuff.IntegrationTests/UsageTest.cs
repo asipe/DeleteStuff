@@ -29,7 +29,6 @@ namespace DeleteStuff.IntegrationTests {
     }
 
     [Test]
-    [Ignore("working on")]
     public void TestListConfigurationWhenNoPathSpecs() {
       Helper.WriteJsonConfig(new ExecutionConfig {Specs = new PathSpec[0]});
       var result = Helper.ProcessExecutor.Start("config", "list");

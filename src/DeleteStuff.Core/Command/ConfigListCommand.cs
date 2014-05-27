@@ -1,13 +1,16 @@
 ﻿using DeleteStuff.Core.Output;
+using SupaCharge.Core.IOAbstractions;
 
 namespace DeleteStuff.Core.Command {
   public class ConfigListCommand : ICommand {
-    public ConfigListCommand(IObserver observer) {
+    public ConfigListCommand(IObserver observer, IFile file) {
       mObserver = observer;
+      mFile = file;
     }
 
     public void Execute(params string[] args) {
-      NotifyAndThrow("deletestuff.json could not be found");
+      if (!mFile.Exists("deletestuff.json"))
+        NotifyAndThrow("deletestuff.json could not be found");
     }
 
     private void NotifyAndThrow(string msg) {
@@ -15,6 +18,7 @@ namespace DeleteStuff.Core.Command {
       throw new DeleteStuffException(msg);
     }
 
+    private readonly IFile mFile;
     private readonly IObserver mObserver;
   }
 }

@@ -9,6 +9,7 @@ namespace DeleteStuff.Core.ObjectFactory.Module {
       builder.RegisterModule(new ListConfigCommandModule());
       builder.RegisterModule(new ConfigCommandModule());
       builder.RegisterModule(new SerializerModule());
+      builder.RegisterModule(new IOModule());
     }
   }
 }

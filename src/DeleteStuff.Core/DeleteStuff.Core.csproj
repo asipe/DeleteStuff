@@ -37,6 +37,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\thirdparty\packages\net-4.5\Newtonsoft.Json\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="supacharge.core">
+      <HintPath>..\..\thirdparty\packages\net-4.5\SupaCharge.Core\lib\net45\supacharge.core.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
@@ -60,6 +63,7 @@
     <Compile Include="ObjectFactory\Module\ApplicationModule.cs" />
     <Compile Include="ObjectFactory\Module\ConfigCommandModule.cs" />
     <Compile Include="ObjectFactory\Module\DefaultModuleConfiguration.cs" />
+    <Compile Include="ObjectFactory\Module\IOModule.cs" />
     <Compile Include="ObjectFactory\Module\ListConfigCommandModule.cs" />
     <Compile Include="ObjectFactory\Module\OutputModule.cs" />
     <Compile Include="ObjectFactory\Module\SerializerModule.cs" />
