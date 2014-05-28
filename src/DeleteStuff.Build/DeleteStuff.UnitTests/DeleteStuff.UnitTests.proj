@@ -20,6 +20,7 @@
     <Reference Include="$(PackagesDir)\autofixture\lib\net40\ploeh.autofixture.dll" />
     <Reference Include="$(PackagesDir)\autofac\lib\net40\autofac.dll" />    
     <Reference Include="$(PackagesDir)\supacharge.core\lib\net45\supacharge.core.dll" />    
+    <Reference Include="$(PackagesDir)\comparenetobjects\lib\net45\kellermansoftware.compare-net-objects.dll" />    
   </ItemGroup>
 
   <ItemGroup>

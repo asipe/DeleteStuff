@@ -8,7 +8,7 @@ namespace DeleteStuff.UnitTests.Core.Command.ConfigList {
   public class ConfigListCommandTest : BaseTestCase {
     [Test]
     public void TestExecuteDelegatesToPipeline() {
-      mPipeline.Setup(p => p.Execute(It.IsAny<Context>()));
+      mPipeline.Setup(p => p.Execute(It.Is<Context>(c => AreEqual(c, new Context()))));
       mCmd.Execute();
     }
 
