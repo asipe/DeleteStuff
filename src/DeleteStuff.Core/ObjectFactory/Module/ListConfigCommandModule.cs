@@ -20,11 +20,16 @@ namespace DeleteStuff.Core.ObjectFactory.Module {
     }
 
     private static void RegisterStages(ContainerBuilder builder) {
+      RegisterStage<ValidateConfigurationFileExistsStage>(builder, 0);
+      RegisterStage<LoadConfigurationFileStage>(builder, 1);
+    }
+
+    private static void RegisterStage<T>(ContainerBuilder builder, int priority) {
       builder
-        .RegisterType<ValidateConfigurationFileExistsStage>()
+        .RegisterType<T>()
         .InstancePerLifetimeScope()
         .As<IStage<Context>>()
-        .WithParameter("priority", 0);
+        .WithParameter("priority", priority);
     }
   }
 }

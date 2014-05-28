@@ -53,6 +53,7 @@
     <Compile Include="Command\ConfigCommand.cs" />
     <Compile Include="Command\ConfigList\ConfigListCommand.cs" />
     <Compile Include="Command\ConfigList\Context.cs" />
+    <Compile Include="Command\ConfigList\Stages\LoadConfigurationFileStage.cs" />
     <Compile Include="Command\ConfigList\Stages\ValidateConfigurationFileExistsStage.cs" />
     <Compile Include="Command\ICommand.cs" />
     <Compile Include="Command\UnknownCommand.cs" />

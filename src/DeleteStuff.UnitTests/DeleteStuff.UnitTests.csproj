@@ -58,6 +58,8 @@
     <Compile Include="Core\App\DeleteStuffApplicationTest.cs" />
     <Compile Include="Core\Command\ConfigCommandTest.cs" />
     <Compile Include="Core\Command\ConfigList\ConfigListCommandTest.cs" />
+    <Compile Include="Core\Command\ConfigList\ContextTest.cs" />
+    <Compile Include="Core\Command\ConfigList\Stages\LoadConfigurationFileStageTest.cs" />
     <Compile Include="Core\Command\ConfigList\Stages\ValidateConfigurationFileExistsStageTest.cs" />
     <Compile Include="Core\Command\UnknownCommandTest.cs" />
     <Compile Include="Core\External\ExecutionConfigTest.cs" />
