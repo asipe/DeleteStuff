@@ -17,14 +17,14 @@ namespace DeleteStuff.UnitTests.Core.Command.ConfigList.Stages {
     [Test]
     public void TestConfigurationFileExistsContinuesExecution() {
       mFile.Setup(f => f.Exists("deletestuff.json")).Returns(true);
-      mStage.Execute(null, mContext);
+      mStage.Execute(mContext, null);
     }
 
     [Test]
     public void TestConfigurationFileDoesNotExistNotifiesAndThrows() {
       mFile.Setup(f => f.Exists("deletestuff.json")).Returns(false);
       mObserver.Setup(o => o.OnError("deletestuff.json could not be found"));
-      var ex = Assert.Throws<DeleteStuffException>(() => mStage.Execute(null, mContext));
+      var ex = Assert.Throws<DeleteStuffException>(() => mStage.Execute(mContext, null));
       Assert.That(ex.Message, Is.EqualTo("deletestuff.json could not be found"));
     }
 
