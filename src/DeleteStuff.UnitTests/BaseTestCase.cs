@@ -47,6 +47,10 @@ namespace DeleteStuff.UnitTests {
       return DoCompare(actual, expected).AreEqual;
     }
 
+    protected static T ItIs<T>(T expected) {
+      return It.Is<T>(t => AreEqual(t, expected));
+    }
+
     private static ComparisonResult DoCompare(object actual, object expected) {
       return _ObjectComparer.Compare(actual, expected);
     }
