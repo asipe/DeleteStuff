@@ -1,4 +1,5 @@
-﻿using Moq;
+﻿using System.Linq;
+using Moq;
 using NUnit.Framework;
 using Ploeh.AutoFixture;
 
@@ -22,6 +23,18 @@ namespace DeleteStuff.UnitTests {
 
     protected T CA<T>() {
       return ObjectFixture.Create<T>();
+    }
+
+    protected T[] BA<T>(params T[] items) {
+      return items;
+    }
+
+    protected T[] CM<T>(int count) {
+      return (count == 0)
+               ? BA<T>()
+               : ObjectFixture
+                   .CreateMany<T>(count)
+                   .ToArray();
     }
 
     protected Fixture ObjectFixture{get;set;}

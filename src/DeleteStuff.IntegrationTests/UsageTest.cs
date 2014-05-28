@@ -11,7 +11,7 @@ namespace DeleteStuff.IntegrationTests {
       Assert.That(result.StandardOutput, Is.Empty);
       Assert.That(result.StandardError, Is.EqualTo(Helper.BuildOutput("Missing Command")));
     }
-    
+
     [Test]
     public void TestExecuteWithUnknownCommand() {
       var result = Helper.ProcessExecutor.Start("cconfig");
@@ -38,7 +38,6 @@ namespace DeleteStuff.IntegrationTests {
     }
 
     [Test]
-    [Ignore("working on")]
     public void TestListConfigurationWhenPathSpecs() {
       Helper.WriteJsonConfig(new ExecutionConfig {
                                                    Specs = new[] {
