@@ -2,10 +2,9 @@
 using DeleteStuff.Core.Command;
 using DeleteStuff.Core.Command.ConfigList;
 using DeleteStuff.Core.Command.ConfigList.Stages;
-using SupaCharge.Core.Patterns;
 
 namespace DeleteStuff.Core.ObjectFactory.Module {
-  public class ListConfigCommandModule : Autofac.Module {
+  public class ListConfigCommandModule : BaseModule {
     protected override void Load(ContainerBuilder builder) {
       base.Load(builder);
       RegisterCommand(builder);
@@ -20,16 +19,8 @@ namespace DeleteStuff.Core.ObjectFactory.Module {
     }
 
     private static void RegisterStages(ContainerBuilder builder) {
-      RegisterStage<LoadConfigurationStage>(builder, 0);
-      RegisterStage<EchoConfigurationStage>(builder, 1);
-    }
-
-    private static void RegisterStage<T>(ContainerBuilder builder, int priority) {
-      builder
-        .RegisterType<T>()
-        .InstancePerLifetimeScope()
-        .As<IStage<Context>>()
-        .WithParameter("priority", priority);
+      RegisterStage<LoadConfigurationStage, Context>(builder, 0);
+      RegisterStage<EchoConfigurationStage, Context>(builder, 1);
     }
   }
 }

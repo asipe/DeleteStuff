@@ -2,7 +2,7 @@
 using DeleteStuff.Core.Utility;
 
 namespace DeleteStuff.Core.ObjectFactory.Module {
-  public class SerializerModule : Autofac.Module {
+  public class SerializerModule : BaseModule {
     protected override void Load(ContainerBuilder builder) {
       base.Load(builder);
 

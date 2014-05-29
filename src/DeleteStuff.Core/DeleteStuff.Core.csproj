@@ -70,6 +70,7 @@
     <Compile Include="ObjectFactory\IFactory.cs" />
     <Compile Include="ObjectFactory\IModuleConfiguration.cs" />
     <Compile Include="ObjectFactory\Module\ApplicationModule.cs" />
+    <Compile Include="ObjectFactory\Module\BaseModule.cs" />
     <Compile Include="ObjectFactory\Module\ConfigCommandModule.cs" />
     <Compile Include="ObjectFactory\Module\DefaultModuleConfiguration.cs" />
     <Compile Include="ObjectFactory\Module\IOModule.cs" />

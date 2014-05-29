@@ -2,7 +2,7 @@
 using DeleteStuff.Core.Command;
 
 namespace DeleteStuff.Core.ObjectFactory.Module {
-  public class UnknownCommandModule : Autofac.Module {
+  public class UnknownCommandModule : BaseModule {
     protected override void Load(ContainerBuilder builder) {
       base.Load(builder);
 
