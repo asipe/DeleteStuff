@@ -11,6 +11,7 @@ namespace DeleteStuff.Core.ObjectFactory.Module {
       builder.RegisterModule(new SerializerModule());
       builder.RegisterModule(new IOModule());
       builder.RegisterModule(new PipelineModule());
+      builder.RegisterModule(new LoadOperationModule());
     }
   }
 }

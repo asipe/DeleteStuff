@@ -1,7 +1,7 @@
 ﻿using SupaCharge.Core.IOAbstractions;
 using SupaCharge.Core.Patterns;
 
-namespace DeleteStuff.Core.Command.ConfigList.Stages {
+namespace DeleteStuff.Core.Model.ConfigurationRepository.LoadOperation.Stages {
   public class LoadConfigurationFileStage : Stage<Context> {
     public LoadConfigurationFileStage(int priority, IFile file) : base(priority) {
       mFile = file;

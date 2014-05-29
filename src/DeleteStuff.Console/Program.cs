@@ -12,7 +12,8 @@ namespace DeleteStuff.Console {
           .Build<IApplication>()
           .Execute(args);
         return 0;
-      } catch (DeleteStuffException) {
+      } catch (DeleteStuffException e) {
+        System.Console.Error.WriteLine(e.Message);
         return 1;
       } catch (Exception e) {
         System.Console.Error.WriteLine(e.Message);

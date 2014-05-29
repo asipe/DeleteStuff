@@ -1,11 +1,11 @@
-﻿using DeleteStuff.Core.Command.ConfigList;
-using DeleteStuff.Core.Command.ConfigList.Stages;
-using DeleteStuff.Core.External;
+﻿using DeleteStuff.Core.External;
+using DeleteStuff.Core.Model.ConfigurationRepository.LoadOperation;
+using DeleteStuff.Core.Model.ConfigurationRepository.LoadOperation.Stages;
 using DeleteStuff.Core.Utility;
 using Moq;
 using NUnit.Framework;
 
-namespace DeleteStuff.UnitTests.Core.Command.ConfigList.Stages {
+namespace DeleteStuff.UnitTests.Core.Model.ConfigurationRepository.LoadOperation.Stages {
   [TestFixture]
   public class DeserializeConfigurationStageTest : BaseTestCase {
     [Test]

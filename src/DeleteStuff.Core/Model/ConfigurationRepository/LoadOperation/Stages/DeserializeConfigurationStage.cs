@@ -2,7 +2,7 @@
 using DeleteStuff.Core.Utility;
 using SupaCharge.Core.Patterns;
 
-namespace DeleteStuff.Core.Command.ConfigList.Stages {
+namespace DeleteStuff.Core.Model.ConfigurationRepository.LoadOperation.Stages {
   public class DeserializeConfigurationStage : Stage<Context> {
     public DeserializeConfigurationStage(int priority, ISerializer serializer) : base(priority) {
       mSerializer = serializer;

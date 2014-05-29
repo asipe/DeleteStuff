@@ -62,13 +62,16 @@
     <Compile Include="Core\Command\ConfigCommandTest.cs" />
     <Compile Include="Core\Command\ConfigList\ConfigListCommandTest.cs" />
     <Compile Include="Core\Command\ConfigList\ContextTest.cs" />
-    <Compile Include="Core\Command\ConfigList\Stages\DeserializeConfigurationStageTest.cs" />
     <Compile Include="Core\Command\ConfigList\Stages\EchoConfigurationStageTest.cs" />
-    <Compile Include="Core\Command\ConfigList\Stages\LoadConfigurationFileStageTest.cs" />
-    <Compile Include="Core\Command\ConfigList\Stages\ValidateConfigurationFileExistsStageTest.cs" />
+    <Compile Include="Core\Command\ConfigList\Stages\LoadConfigurationStageTest.cs" />
     <Compile Include="Core\Command\UnknownCommandTest.cs" />
     <Compile Include="Core\External\ExecutionConfigTest.cs" />
     <Compile Include="Core\External\PathSpecTest.cs" />
+    <Compile Include="Core\Model\ConfigurationRepository\LoadOperation\OperationTest.cs" />
+    <Compile Include="Core\Model\ConfigurationRepository\LoadOperation\ContextTest.cs" />
+    <Compile Include="Core\Model\ConfigurationRepository\LoadOperation\Stages\DeserializeConfigurationStageTest.cs" />
+    <Compile Include="Core\Model\ConfigurationRepository\LoadOperation\Stages\LoadConfigurationFileStageTest.cs" />
+    <Compile Include="Core\Model\ConfigurationRepository\LoadOperation\Stages\ValidateConfigurationFileExistsStageTest.cs" />
     <Compile Include="Core\Utility\JsonSerializerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

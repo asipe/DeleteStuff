@@ -1,12 +1,11 @@
 ﻿using DeleteStuff.Core;
-using DeleteStuff.Core.Command.ConfigList;
-using DeleteStuff.Core.Command.ConfigList.Stages;
-using DeleteStuff.Core.Output;
+using DeleteStuff.Core.Model.ConfigurationRepository.LoadOperation;
+using DeleteStuff.Core.Model.ConfigurationRepository.LoadOperation.Stages;
 using Moq;
 using NUnit.Framework;
 using SupaCharge.Core.IOAbstractions;
 
-namespace DeleteStuff.UnitTests.Core.Command.ConfigList.Stages {
+namespace DeleteStuff.UnitTests.Core.Model.ConfigurationRepository.LoadOperation.Stages {
   [TestFixture]
   public class ValidateConfigurationFileExistsStageTest : BaseTestCase {
     [Test]
@@ -21,9 +20,8 @@ namespace DeleteStuff.UnitTests.Core.Command.ConfigList.Stages {
     }
 
     [Test]
-    public void TestConfigurationFileDoesNotExistNotifiesAndThrows() {
+    public void TestConfigurationFileDoesNotExistThrows() {
       mFile.Setup(f => f.Exists("deletestuff.json")).Returns(false);
-      mObserver.Setup(o => o.OnError("deletestuff.json could not be found"));
       var ex = Assert.Throws<DeleteStuffException>(() => mStage.Execute(mContext, null));
       Assert.That(ex.Message, Is.EqualTo("deletestuff.json could not be found"));
     }
@@ -31,13 +29,11 @@ namespace DeleteStuff.UnitTests.Core.Command.ConfigList.Stages {
     [SetUp]
     public void DoSetup() {
       mFile = Mok<IFile>();
-      mObserver = Mok<IObserver>();
-      mStage = new ValidateConfigurationFileExistsStage(33, mObserver.Object, mFile.Object);
+      mStage = new ValidateConfigurationFileExistsStage(33, mFile.Object);
       mContext = CA<Context>();
     }
 
     private Mock<IFile> mFile;
-    private Mock<IObserver> mObserver;
     private ValidateConfigurationFileExistsStage mStage;
     private Context mContext;
   }
