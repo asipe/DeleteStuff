@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Autofac.Features.Indexed;
 
-namespace DeleteStuff.Core.Command.Common {
+namespace DeleteStuff.Core.Commands.Common {
   public class CommandIndex : ICommandIndex {
     public CommandIndex(IIndex<string, ICommand> index) {
       mIndex = index;

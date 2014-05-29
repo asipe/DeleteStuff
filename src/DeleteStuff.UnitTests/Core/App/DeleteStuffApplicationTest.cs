@@ -1,6 +1,7 @@
 ﻿using DeleteStuff.Core.App;
 using DeleteStuff.Core.Command;
-using DeleteStuff.Core.Command.Common;
+using DeleteStuff.Core.Commands;
+using DeleteStuff.Core.Commands.Common;
 using Moq;
 using NUnit.Framework;
 

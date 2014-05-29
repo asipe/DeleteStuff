@@ -1,11 +1,11 @@
-﻿using DeleteStuff.Core.Command.Config.List;
-using DeleteStuff.Core.Command.Config.List.Stages;
+﻿using DeleteStuff.Core.Commands.Config.List;
+using DeleteStuff.Core.Commands.Config.List.Stages;
 using DeleteStuff.Core.External;
 using DeleteStuff.Core.Output;
 using Moq;
 using NUnit.Framework;
 
-namespace DeleteStuff.UnitTests.Core.Command.Config.List.Stages {
+namespace DeleteStuff.UnitTests.Core.Commands.Config.List.Stages {
   [TestFixture]
   public class EchoConfigurationStageTest : BaseTestCase {
     [Test]

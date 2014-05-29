@@ -1,9 +1,9 @@
-﻿using DeleteStuff.Core.Command.Config.List;
+﻿using DeleteStuff.Core.Commands.Config.List;
 using Moq;
 using NUnit.Framework;
 using SupaCharge.Core.Patterns;
 
-namespace DeleteStuff.UnitTests.Core.Command.Config.List {
+namespace DeleteStuff.UnitTests.Core.Commands.Config.List {
   [TestFixture]
   public class ConfigListCommandTest : BaseTestCase {
     [Test]

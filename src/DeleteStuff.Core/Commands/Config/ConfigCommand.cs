@@ -1,6 +1,6 @@
-﻿using DeleteStuff.Core.Command.Common;
+﻿using DeleteStuff.Core.Commands.Common;
 
-namespace DeleteStuff.Core.Command.Config {
+namespace DeleteStuff.Core.Commands.Config {
   public class ConfigCommand : ICommand {
     public ConfigCommand(ICommandIndex index) {
       mIndex = index;
