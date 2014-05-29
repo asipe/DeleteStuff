@@ -21,6 +21,22 @@ namespace DeleteStuff.IntegrationTests {
     }
 
     [Test]
+    public void TestExecuteWithNoConfigSubCommand() {
+      var result = Helper.ProcessExecutor.Start("config");
+      Assert.That(result.ExitCode, Is.EqualTo(1));
+      Assert.That(result.StandardOutput, Is.Empty);
+      Assert.That(result.StandardError, Is.EqualTo(Helper.BuildOutput("Missing Subcommand")));
+    }
+
+    [Test]
+    public void TestExecuteWithUnknownConfigSubCommand() {
+      var result = Helper.ProcessExecutor.Start("config", "blah");
+      Assert.That(result.ExitCode, Is.EqualTo(1));
+      Assert.That(result.StandardOutput, Is.Empty);
+      Assert.That(result.StandardError, Is.EqualTo(Helper.BuildOutput("Unknown Subcommand: blah")));
+    }
+
+    [Test]
     public void TestListConfigurationWhenNoConfigurationFileFound() {
       var result = Helper.ProcessExecutor.Start("config", "list");
       Assert.That(result.ExitCode, Is.EqualTo(1));
