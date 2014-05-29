@@ -1,7 +1,7 @@
 ﻿using DeleteStuff.Core.Model.ConfigurationRepository.LoadOperation;
 using SupaCharge.Core.Patterns;
 
-namespace DeleteStuff.Core.Command.ConfigList.Stages {
+namespace DeleteStuff.Core.Command.Config.List.Stages {
   public class LoadConfigurationStage : Stage<Context> {
     public LoadConfigurationStage(int priority, ILoadOperation operation) : base(priority) {
       mOperation = operation;

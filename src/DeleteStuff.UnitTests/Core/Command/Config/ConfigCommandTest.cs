@@ -1,9 +1,10 @@
 ﻿using DeleteStuff.Core.Command;
 using DeleteStuff.Core.Command.Common;
+using DeleteStuff.Core.Command.Config;
 using Moq;
 using NUnit.Framework;
 
-namespace DeleteStuff.UnitTests.Core.Command {
+namespace DeleteStuff.UnitTests.Core.Command.Config {
   [TestFixture]
   public class ConfigCommandTest : BaseTestCase {
     [Test]

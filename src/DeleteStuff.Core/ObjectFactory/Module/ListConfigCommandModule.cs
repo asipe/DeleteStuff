@@ -1,7 +1,7 @@
 ﻿using Autofac;
 using DeleteStuff.Core.Command;
-using DeleteStuff.Core.Command.ConfigList;
-using DeleteStuff.Core.Command.ConfigList.Stages;
+using DeleteStuff.Core.Command.Config.List;
+using DeleteStuff.Core.Command.Config.List.Stages;
 
 namespace DeleteStuff.Core.ObjectFactory.Module {
   public class ListConfigCommandModule : BaseModule {

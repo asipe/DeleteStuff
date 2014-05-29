@@ -1,6 +1,6 @@
 ﻿using SupaCharge.Core.Patterns;
 
-namespace DeleteStuff.Core.Command.ConfigList {
+namespace DeleteStuff.Core.Command.Config.List {
   public class ConfigListCommand : ICommand {
     public ConfigListCommand(IPipeline<Context> pipeline) {
       mPipeline = pipeline;

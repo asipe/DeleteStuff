@@ -2,7 +2,7 @@
 using DeleteStuff.Core.Output;
 using SupaCharge.Core.Patterns;
 
-namespace DeleteStuff.Core.Command.ConfigList.Stages {
+namespace DeleteStuff.Core.Command.Config.List.Stages {
   public class EchoConfigurationStage : Stage<Context> {
     public EchoConfigurationStage(int priority, IObserver observer) : base(priority) {
       mObserver = observer;

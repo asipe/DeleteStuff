@@ -52,11 +52,11 @@
     <Compile Include="App\IApplication.cs" />
     <Compile Include="Command\Common\CommandIndex.cs" />
     <Compile Include="Command\Common\ICommandIndex.cs" />
-    <Compile Include="Command\ConfigCommand.cs" />
-    <Compile Include="Command\ConfigList\ConfigListCommand.cs" />
-    <Compile Include="Command\ConfigList\Context.cs" />
-    <Compile Include="Command\ConfigList\Stages\EchoConfigurationStage.cs" />
-    <Compile Include="Command\ConfigList\Stages\LoadConfigurationStage.cs" />
+    <Compile Include="Command\Config\ConfigCommand.cs" />
+    <Compile Include="Command\Config\List\ConfigListCommand.cs" />
+    <Compile Include="Command\Config\List\Context.cs" />
+    <Compile Include="Command\Config\List\Stages\EchoConfigurationStage.cs" />
+    <Compile Include="Command\Config\List\Stages\LoadConfigurationStage.cs" />
     <Compile Include="Command\ICommand.cs" />
     <Compile Include="DeleteStuffException.cs" />
     <Compile Include="External\ExecutionConfig.cs" />

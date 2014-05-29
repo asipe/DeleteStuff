@@ -1,7 +1,7 @@
-﻿using DeleteStuff.Core.Command.ConfigList;
+﻿using DeleteStuff.Core.Command.Config.List;
 using NUnit.Framework;
 
-namespace DeleteStuff.UnitTests.Core.Command.ConfigList {
+namespace DeleteStuff.UnitTests.Core.Command.Config.List {
   [TestFixture]
   public class ContextTest : BaseTestCase {
     [Test]
