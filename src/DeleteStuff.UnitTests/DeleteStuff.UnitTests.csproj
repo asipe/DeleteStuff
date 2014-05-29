@@ -58,8 +58,8 @@
       <Link>AssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="BaseTestCase.cs" />
-    <Compile Include="Core\App\CommandIndexTest.cs" />
     <Compile Include="Core\App\DeleteStuffApplicationTest.cs" />
+    <Compile Include="Core\Command\Common\CommandIndexTest.cs" />
     <Compile Include="Core\Command\ConfigCommandTest.cs" />
     <Compile Include="Core\Command\ConfigList\ConfigListCommandTest.cs" />
     <Compile Include="Core\Command\ConfigList\ContextTest.cs" />

@@ -1,10 +1,11 @@
 ﻿using Autofac.Features.Indexed;
 using DeleteStuff.Core;
 using DeleteStuff.Core.Command;
+using DeleteStuff.Core.Command.Common;
 using Moq;
 using NUnit.Framework;
 
-namespace DeleteStuff.UnitTests.Core.App {
+namespace DeleteStuff.UnitTests.Core.Command.Common {
   [TestFixture]
   public class CommandIndexTest : BaseTestCase {
     [Test]

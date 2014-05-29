@@ -50,14 +50,14 @@
     </Compile>
     <Compile Include="App\DeleteStuffApplication.cs" />
     <Compile Include="App\IApplication.cs" />
-    <Compile Include="Command\CommandIndex.cs" />
+    <Compile Include="Command\Common\CommandIndex.cs" />
+    <Compile Include="Command\Common\ICommandIndex.cs" />
     <Compile Include="Command\ConfigCommand.cs" />
     <Compile Include="Command\ConfigList\ConfigListCommand.cs" />
     <Compile Include="Command\ConfigList\Context.cs" />
     <Compile Include="Command\ConfigList\Stages\EchoConfigurationStage.cs" />
     <Compile Include="Command\ConfigList\Stages\LoadConfigurationStage.cs" />
     <Compile Include="Command\ICommand.cs" />
-    <Compile Include="Command\ICommandIndex.cs" />
     <Compile Include="DeleteStuffException.cs" />
     <Compile Include="External\ExecutionConfig.cs" />
     <Compile Include="External\PathSpec.cs" />
