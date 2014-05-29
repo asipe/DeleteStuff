@@ -58,13 +58,13 @@
       <Link>AssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="BaseTestCase.cs" />
+    <Compile Include="Core\App\CommandIndexTest.cs" />
     <Compile Include="Core\App\DeleteStuffApplicationTest.cs" />
     <Compile Include="Core\Command\ConfigCommandTest.cs" />
     <Compile Include="Core\Command\ConfigList\ConfigListCommandTest.cs" />
     <Compile Include="Core\Command\ConfigList\ContextTest.cs" />
     <Compile Include="Core\Command\ConfigList\Stages\EchoConfigurationStageTest.cs" />
     <Compile Include="Core\Command\ConfigList\Stages\LoadConfigurationStageTest.cs" />
-    <Compile Include="Core\Command\UnknownCommandTest.cs" />
     <Compile Include="Core\External\ExecutionConfigTest.cs" />
     <Compile Include="Core\External\PathSpecTest.cs" />
     <Compile Include="Core\Model\ConfigurationRepository\LoadOperation\OperationTest.cs" />
