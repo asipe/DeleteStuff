@@ -6,7 +6,7 @@ using NUnit.Framework;
 
 namespace DeleteStuff.UnitTests.Core.Commands.Config {
   [TestFixture]
-  public class ConfigCommandTest : BaseTestCase {
+  public class CommandTest : BaseTestCase {
     [Test]
     public void TestExecuteBuildsSubCommandAndExecutes() {
       mIndex.Setup(i => i.GetSubcommand("config", "sub", "blah")).Returns(mCommand.Object);
@@ -18,10 +18,10 @@ namespace DeleteStuff.UnitTests.Core.Commands.Config {
     public void DoSetup() {
       mCommand = Mok<ICommand>();
       mIndex = Mok<ICommandIndex>();
-      mCmd = new ConfigCommand(mIndex.Object);
+      mCmd = new Command(mIndex.Object);
     }
 
-    private ConfigCommand mCmd;
+    private Command mCmd;
     private Mock<ICommandIndex> mIndex;
     private Mock<ICommand> mCommand;
   }

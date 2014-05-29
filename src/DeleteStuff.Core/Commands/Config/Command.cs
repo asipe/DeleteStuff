@@ -1,8 +1,8 @@
 ﻿using DeleteStuff.Core.Commands.Common;
 
 namespace DeleteStuff.Core.Commands.Config {
-  public class ConfigCommand : ICommand {
-    public ConfigCommand(ICommandIndex index) {
+  public class Command : ICommand {
+    public Command(ICommandIndex index) {
       mIndex = index;
     }
 

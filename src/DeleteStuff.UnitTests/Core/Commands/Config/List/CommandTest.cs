@@ -5,7 +5,7 @@ using SupaCharge.Core.Patterns;
 
 namespace DeleteStuff.UnitTests.Core.Commands.Config.List {
   [TestFixture]
-  public class ConfigListCommandTest : BaseTestCase {
+  public class CommandTest : BaseTestCase {
     [Test]
     public void TestExecuteDelegatesToPipeline() {
       mPipeline.Setup(p => p.Execute(ItIs(new Context())));
@@ -15,10 +15,10 @@ namespace DeleteStuff.UnitTests.Core.Commands.Config.List {
     [SetUp]
     public void DoSetup() {
       mPipeline = Mok<IPipeline<Context>>();
-      mCmd = new ConfigListCommand(mPipeline.Object);
+      mCmd = new Command(mPipeline.Object);
     }
 
-    private ConfigListCommand mCmd;
+    private Command mCmd;
     private Mock<IPipeline<Context>> mPipeline;
   }
 }

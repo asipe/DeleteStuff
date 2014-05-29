@@ -1,5 +1,4 @@
 ﻿using Autofac;
-using DeleteStuff.Core.Command;
 using DeleteStuff.Core.Commands;
 using DeleteStuff.Core.Commands.Config;
 
@@ -9,7 +8,7 @@ namespace DeleteStuff.Core.ObjectFactory.Module {
       base.Load(builder);
 
       builder
-        .RegisterType<ConfigCommand>()
+        .RegisterType<Command>()
         .InstancePerLifetimeScope()
         .Keyed<ICommand>("config");
     }

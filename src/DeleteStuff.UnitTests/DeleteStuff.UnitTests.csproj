@@ -59,12 +59,12 @@
     </Compile>
     <Compile Include="BaseTestCase.cs" />
     <Compile Include="Core\App\DeleteStuffApplicationTest.cs" />
-    <Compile Include="Core\Command\Common\CommandIndexTest.cs" />
-    <Compile Include="Core\Command\Config\ConfigCommandTest.cs" />
-    <Compile Include="Core\Command\Config\List\ConfigListCommandTest.cs" />
-    <Compile Include="Core\Command\Config\List\ContextTest.cs" />
-    <Compile Include="Core\Command\Config\List\Stages\EchoConfigurationStageTest.cs" />
-    <Compile Include="Core\Command\Config\List\Stages\LoadConfigurationStageTest.cs" />
+    <Compile Include="Core\Commands\Common\CommandIndexTest.cs" />
+    <Compile Include="Core\Commands\Config\CommandTest.cs" />
+    <Compile Include="Core\Commands\Config\List\CommandTest.cs" />
+    <Compile Include="Core\Commands\Config\List\ContextTest.cs" />
+    <Compile Include="Core\Commands\Config\List\Stages\EchoConfigurationStageTest.cs" />
+    <Compile Include="Core\Commands\Config\List\Stages\LoadConfigurationStageTest.cs" />
     <Compile Include="Core\External\ExecutionConfigTest.cs" />
     <Compile Include="Core\External\PathSpecTest.cs" />
     <Compile Include="Core\Model\ConfigurationRepository\LoadOperation\OperationTest.cs" />

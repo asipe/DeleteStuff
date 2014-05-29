@@ -8,6 +8,6 @@ namespace DeleteStuff.UnitTests.Core.Commands.Config.List {
     public void TestDefaults() {
       var context = new Context();
       Assert.That(context.ExecutionConfig, Is.Null);
-    } 
+    }
   }
 }

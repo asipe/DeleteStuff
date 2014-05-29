@@ -1,6 +1,5 @@
 ﻿using Autofac;
 using DeleteStuff.Core.App;
-using DeleteStuff.Core.Command;
 using DeleteStuff.Core.Commands.Common;
 
 namespace DeleteStuff.Core.ObjectFactory.Module {

@@ -9,6 +9,6 @@ namespace DeleteStuff.UnitTests.Core.Model.ConfigurationRepository.LoadOperation
       var context = new Context();
       Assert.That(context.ConfigurationJson, Is.Null);
       Assert.That(context.ExecutionConfig, Is.Null);
-    } 
+    }
   }
 }

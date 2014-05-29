@@ -1,5 +1,4 @@
-﻿using DeleteStuff.Core.Command;
-using DeleteStuff.Core.Commands.Common;
+﻿using DeleteStuff.Core.Commands.Common;
 
 namespace DeleteStuff.Core.App {
   public class DeleteStuffApplication : IApplication {

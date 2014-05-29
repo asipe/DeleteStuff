@@ -1,5 +1,4 @@
 ﻿using Autofac;
-using DeleteStuff.Core.Command;
 using DeleteStuff.Core.Commands;
 using DeleteStuff.Core.Commands.Config.List;
 using DeleteStuff.Core.Commands.Config.List.Stages;
@@ -14,7 +13,7 @@ namespace DeleteStuff.Core.ObjectFactory.Module {
 
     private static void RegisterCommand(ContainerBuilder builder) {
       builder
-        .RegisterType<ConfigListCommand>()
+        .RegisterType<Command>()
         .InstancePerLifetimeScope()
         .Keyed<ICommand>("config-list");
     }
