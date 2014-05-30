@@ -1,3 +1,4 @@
+using System;
 using System.Diagnostics;
 using NUnit.Framework;
 
@@ -18,6 +19,9 @@ namespace DeleteStuff.IntegrationTests.Infrastructure {
                                                                 CreateNoWindow = true,
                                                                 Arguments = CombineArgs(args)
                                                               })) {
+        if (process == null)
+          throw new Exception("Unable to start process");
+
         var standardError = process.StandardError.ReadToEnd();
         var standardOutput = process.StandardOutput.ReadToEnd();
         Assert.That(process.WaitForExit(60000 * 5), Is.True);
