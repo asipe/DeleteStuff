@@ -70,22 +70,46 @@ namespace DeleteStuff.IntegrationTests {
       Helper.WriteJsonConfig(new ExecutionConfig {
                                                    Specs = new[] {
                                                                    new PathSpec {
-                                                                                  Name = "ps1",
+                                                                                  Name = "project0",
                                                                                   Entries = new string[0]
                                                                                 },
                                                                    new PathSpec {
-                                                                                  Name = "ps2",
-                                                                                  Entries = new string[0]
+                                                                                  Name = "project1",
+                                                                                  Entries = new[] {@"c:\project1\bin\*.exe"}
                                                                                 },
                                                                    new PathSpec {
-                                                                                  Name = "ps3",
-                                                                                  Entries = new string[0]
+                                                                                  Name = "project2",
+                                                                                  Entries = new[] {
+                                                                                                    @"c:\project2\bin\*.exe",
+                                                                                                    @"c:\project2\obj\*.dll"
+                                                                                                  }
+                                                                                },
+                                                                   new PathSpec {
+                                                                                  Name = "project3",
+                                                                                  Entries = new[] {
+                                                                                                    @"c:\project3\bin\*.exe",
+                                                                                                    @"c:\project3\obj\*.dll",
+                                                                                                    @"c:\project3\app_data\**\*.*"
+                                                                                                  }
                                                                                 }
                                                                  }
                                                  });
       var result = Helper.ProcessExecutor.Start("config", "list");
       Assert.That(result.ExitCode, Is.EqualTo(0));
-      Assert.That(result.StandardOutput, Is.EqualTo(Helper.BuildOutput("ps1", "ps2", "ps3")));
+      Assert.That(result.StandardOutput, Is.EqualTo(Helper.BuildOutput("project0",
+                                                                       "",
+                                                                       "project1",
+                                                                       @"   c:\project1\bin\*.exe",
+                                                                       "",
+                                                                       "project2",
+                                                                       @"   c:\project2\bin\*.exe",
+                                                                       @"   c:\project2\obj\*.dll",
+                                                                       "",
+                                                                       "project3",
+                                                                       @"   c:\project3\bin\*.exe",
+                                                                       @"   c:\project3\obj\*.dll",
+                                                                       @"   c:\project3\app_data\**\*.*",
+                                                                       "")));
       Assert.That(result.StandardError, Is.Empty);
     }
   }
