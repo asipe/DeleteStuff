@@ -1,4 +1,5 @@
-﻿using DeleteStuff.Core.External;
+﻿using System;
+using DeleteStuff.Core.External;
 using DeleteStuff.Core.Utility;
 using SupaCharge.Core.Patterns;
 
@@ -9,7 +10,11 @@ namespace DeleteStuff.Core.Model.ConfigurationRepository.LoadOperation.Stages {
     }
 
     protected override void DoExecute(Context context) {
-      context.ExecutionConfig = mSerializer.Deserialize<ExecutionConfig>(context.ConfigurationJson);
+      try {
+        context.ExecutionConfig = mSerializer.Deserialize<ExecutionConfig>(context.ConfigurationJson);
+      } catch (Exception e) {
+        throw new DeleteStuffException(string.Format("deletestuff.json does not contain valid json: {0}", e.Message), e);
+      }
     }
 
     private readonly ISerializer mSerializer;

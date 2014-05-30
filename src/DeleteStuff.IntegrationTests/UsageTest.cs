@@ -44,6 +44,18 @@ namespace DeleteStuff.IntegrationTests {
       Assert.That(result.StandardError, Is.EqualTo(Helper.BuildOutput("deletestuff.json could not be found")));
     }
 
+    [TestCase("", "deletestuff.json does not contain a valid configuration: configuration is null")]
+    [TestCase("  ", "deletestuff.json does not contain a valid configuration: configuration is null")]
+    [TestCase("invalid json", "deletestuff.json does not contain valid json: Unexpected character encountered while parsing value: i. Path '', line 0, position 0.")]
+    [TestCase("{}", "deletestuff.json does not contain a valid configuration: specs are null")]
+    public void TestListConfigurationWhenMalformedConfigurationFile(string config, string expectedMessage) {
+      Helper.WriteJsonConfig(config);
+      var result = Helper.ProcessExecutor.Start("config", "list");
+      Assert.That(result.ExitCode, Is.EqualTo(1));
+      Assert.That(result.StandardOutput, Is.Empty);
+      Assert.That(result.StandardError, Is.EqualTo(Helper.BuildOutput(expectedMessage)));
+    }
+
     [Test]
     public void TestListConfigurationWhenNoPathSpecs() {
       Helper.WriteJsonConfig(new ExecutionConfig {Specs = new PathSpec[0]});

@@ -22,7 +22,11 @@ namespace DeleteStuff.IntegrationTests.Infrastructure {
     }
 
     public void WriteJsonConfig(ExecutionConfig config) {
-      File.WriteAllText(PathInfo.JsonConfigPath, JsonConvert.SerializeObject(config));
+      WriteJsonConfig(JsonConvert.SerializeObject(config));
+    }
+    
+    public void WriteJsonConfig(string config) {
+      File.WriteAllText(PathInfo.JsonConfigPath, config);
     }
 
     public string BuildOutput(params string[] lines) {

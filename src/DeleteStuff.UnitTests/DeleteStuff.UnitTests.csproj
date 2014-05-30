@@ -72,6 +72,7 @@
     <Compile Include="Core\Model\ConfigurationRepository\LoadOperation\Stages\DeserializeConfigurationStageTest.cs" />
     <Compile Include="Core\Model\ConfigurationRepository\LoadOperation\Stages\LoadConfigurationFileStageTest.cs" />
     <Compile Include="Core\Model\ConfigurationRepository\LoadOperation\Stages\ValidateConfigurationFileExistsStageTest.cs" />
+    <Compile Include="Core\Model\ConfigurationRepository\LoadOperation\Stages\ValidateConfigurationStageTest.cs" />
     <Compile Include="Core\Utility\JsonSerializerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

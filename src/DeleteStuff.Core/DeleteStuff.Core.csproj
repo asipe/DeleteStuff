@@ -67,6 +67,7 @@
     <Compile Include="Model\ConfigurationRepository\LoadOperation\Stages\DeserializeConfigurationStage.cs" />
     <Compile Include="Model\ConfigurationRepository\LoadOperation\Stages\LoadConfigurationFileStage.cs" />
     <Compile Include="Model\ConfigurationRepository\LoadOperation\Stages\ValidateConfigurationFileExistsStage.cs" />
+    <Compile Include="Model\ConfigurationRepository\LoadOperation\Stages\ValidateConfigurationStage.cs" />
     <Compile Include="ObjectFactory\Factory.cs" />
     <Compile Include="ObjectFactory\IFactory.cs" />
     <Compile Include="ObjectFactory\IModuleConfiguration.cs" />

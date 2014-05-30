@@ -21,6 +21,7 @@ namespace DeleteStuff.Core.ObjectFactory.Module {
       RegisterStage<ValidateConfigurationFileExistsStage, Context>(builder, 0);
       RegisterStage<LoadConfigurationFileStage, Context>(builder, 1);
       RegisterStage<DeserializeConfigurationStage, Context>(builder, 2);
+      RegisterStage<ValidateConfigurationStage, Context>(builder, 3);
     }
   }
 }
