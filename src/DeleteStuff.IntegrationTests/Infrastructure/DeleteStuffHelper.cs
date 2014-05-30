@@ -24,7 +24,7 @@ namespace DeleteStuff.IntegrationTests.Infrastructure {
     public void WriteJsonConfig(ExecutionConfig config) {
       WriteJsonConfig(JsonConvert.SerializeObject(config));
     }
-    
+
     public void WriteJsonConfig(string config) {
       File.WriteAllText(PathInfo.JsonConfigPath, config);
     }
