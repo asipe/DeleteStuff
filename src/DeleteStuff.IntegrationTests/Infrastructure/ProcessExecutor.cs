@@ -10,7 +10,7 @@ namespace DeleteStuff.IntegrationTests.Infrastructure {
 
     public ExecutionResult Start(params string[] args) {
       using (var process = Process.Start(new ProcessStartInfo {
-                                                                WorkingDirectory = mPathInfo.TestWorkingDir,
+                                                                WorkingDirectory = mPathInfo.TestInstallDir,
                                                                 FileName = mPathInfo.ExePath,
                                                                 UseShellExecute = false,
                                                                 RedirectStandardError = true,
