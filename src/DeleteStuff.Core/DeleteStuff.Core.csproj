@@ -58,6 +58,8 @@
     <Compile Include="Commands\Config\List\Stages\EchoConfigurationStage.cs" />
     <Compile Include="Commands\Config\List\Stages\LoadConfigurationStage.cs" />
     <Compile Include="Commands\ICommand.cs" />
+    <Compile Include="Commands\Stats\Command.cs" />
+    <Compile Include="Commands\Stats\Context.cs" />
     <Compile Include="DeleteStuffException.cs" />
     <Compile Include="External\ExecutionConfig.cs" />
     <Compile Include="External\PathSpec.cs" />
@@ -81,13 +83,16 @@
     <Compile Include="ObjectFactory\Module\OutputModule.cs" />
     <Compile Include="ObjectFactory\Module\PipelineModule.cs" />
     <Compile Include="ObjectFactory\Module\SerializerModule.cs" />
+    <Compile Include="ObjectFactory\Module\StatsCommandModule.cs" />
     <Compile Include="Output\ConsoleOutput\ConsoleWriter.cs" />
     <Compile Include="Output\IObserver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utility\ISerializer.cs" />
     <Compile Include="Utility\JsonSerializer.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Commands\Stats\Stages\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
