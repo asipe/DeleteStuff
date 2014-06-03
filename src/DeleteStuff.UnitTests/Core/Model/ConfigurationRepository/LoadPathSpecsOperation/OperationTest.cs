@@ -1,10 +1,10 @@
 ﻿using DeleteStuff.Core.External;
-using DeleteStuff.Core.Model.ConfigurationRepository.LoadSpecsOperation;
+using DeleteStuff.Core.Model.ConfigurationRepository.LoadPathSpecsOperation;
 using Moq;
 using NUnit.Framework;
 using SupaCharge.Core.Patterns;
 
-namespace DeleteStuff.UnitTests.Core.Model.ConfigurationRepository.LoadSpecsOperation {
+namespace DeleteStuff.UnitTests.Core.Model.ConfigurationRepository.LoadPathSpecsOperation {
   [TestFixture]
   public class OperationTest : BaseTestCase {
     [Test]

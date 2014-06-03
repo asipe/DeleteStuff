@@ -1,7 +1,7 @@
-﻿using DeleteStuff.Core.Model.ConfigurationRepository.LoadSpecsOperation;
+﻿using DeleteStuff.Core.Model.ConfigurationRepository.LoadPathSpecsOperation;
 using NUnit.Framework;
 
-namespace DeleteStuff.UnitTests.Core.Model.ConfigurationRepository.LoadSpecsOperation {
+namespace DeleteStuff.UnitTests.Core.Model.ConfigurationRepository.LoadPathSpecsOperation {
   [TestFixture]
   public class ContextTest : BaseTestCase {
     [Test]

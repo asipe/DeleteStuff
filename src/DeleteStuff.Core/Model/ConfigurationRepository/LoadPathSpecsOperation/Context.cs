@@ -1,6 +1,6 @@
 ﻿using DeleteStuff.Core.External;
 
-namespace DeleteStuff.Core.Model.ConfigurationRepository.LoadSpecsOperation {
+namespace DeleteStuff.Core.Model.ConfigurationRepository.LoadPathSpecsOperation {
   public class Context {
     public Context(params string[] names) {
       Names = names;

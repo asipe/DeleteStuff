@@ -1,8 +1,8 @@
 ﻿using DeleteStuff.Core.External;
 using SupaCharge.Core.Patterns;
 
-namespace DeleteStuff.Core.Model.ConfigurationRepository.LoadSpecsOperation {
-  public class Operation : ILoadSpecsOperation {
+namespace DeleteStuff.Core.Model.ConfigurationRepository.LoadPathSpecsOperation {
+  public class Operation : ILoadPathSpecsOperation {
     public Operation(IPipeline<Context> pipeline) {
       mPipeline = pipeline;
     }

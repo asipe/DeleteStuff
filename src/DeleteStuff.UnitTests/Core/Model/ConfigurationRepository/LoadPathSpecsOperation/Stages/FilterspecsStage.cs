@@ -1,9 +1,9 @@
 ﻿using DeleteStuff.Core;
-using DeleteStuff.Core.Model.ConfigurationRepository.LoadSpecsOperation;
-using DeleteStuff.Core.Model.ConfigurationRepository.LoadSpecsOperation.Stages;
+using DeleteStuff.Core.Model.ConfigurationRepository.LoadPathSpecsOperation;
+using DeleteStuff.Core.Model.ConfigurationRepository.LoadPathSpecsOperation.Stages;
 using NUnit.Framework;
 
-namespace DeleteStuff.UnitTests.Core.Model.ConfigurationRepository.LoadSpecsOperation.Stages {
+namespace DeleteStuff.UnitTests.Core.Model.ConfigurationRepository.LoadPathSpecsOperation.Stages {
   [TestFixture]
   public class FilterspecsStage : BaseTestCase {
     [Test]

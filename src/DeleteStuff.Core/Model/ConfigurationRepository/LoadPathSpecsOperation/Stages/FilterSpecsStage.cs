@@ -3,7 +3,7 @@ using System.Linq;
 using DeleteStuff.Core.External;
 using SupaCharge.Core.Patterns;
 
-namespace DeleteStuff.Core.Model.ConfigurationRepository.LoadSpecsOperation.Stages {
+namespace DeleteStuff.Core.Model.ConfigurationRepository.LoadPathSpecsOperation.Stages {
   public class FilterSpecsStage : Stage<Context> {
     public FilterSpecsStage(int priority) : base(priority) {}
 

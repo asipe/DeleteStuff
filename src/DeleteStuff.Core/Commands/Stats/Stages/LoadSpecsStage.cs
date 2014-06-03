@@ -1,9 +1,9 @@
-﻿using DeleteStuff.Core.Model.ConfigurationRepository.LoadSpecsOperation;
+﻿using DeleteStuff.Core.Model.ConfigurationRepository.LoadPathSpecsOperation;
 using SupaCharge.Core.Patterns;
 
 namespace DeleteStuff.Core.Commands.Stats.Stages {
   public class LoadSpecsStage : Stage<Context> {
-    public LoadSpecsStage(int priority, ILoadSpecsOperation operation) : base(priority) {
+    public LoadSpecsStage(int priority, ILoadPathSpecsOperation operation) : base(priority) {
       mOperation = operation;
     }
 
@@ -11,6 +11,6 @@ namespace DeleteStuff.Core.Commands.Stats.Stages {
       context.PathSpecs = mOperation.Load(context.Names);
     }
 
-    private readonly ILoadSpecsOperation mOperation;
+    private readonly ILoadPathSpecsOperation mOperation;
   }
 }

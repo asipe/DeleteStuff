@@ -1,6 +1,6 @@
 ﻿using DeleteStuff.Core.Commands.Stats.Stages;
 using DeleteStuff.Core.External;
-using DeleteStuff.Core.Model.ConfigurationRepository.LoadSpecsOperation;
+using DeleteStuff.Core.Model.ConfigurationRepository.LoadPathSpecsOperation;
 using Moq;
 using NUnit.Framework;
 using Context = DeleteStuff.Core.Commands.Stats.Context;
@@ -23,7 +23,7 @@ namespace DeleteStuff.UnitTests.Core.Commands.Stats.Stages {
 
     [SetUp]
     public void DoSetup() {
-      mOperation = Mok<ILoadSpecsOperation>();
+      mOperation = Mok<ILoadPathSpecsOperation>();
       mStage = new LoadSpecsStage(33, mOperation.Object);
       mContext = CA<Context>();
       mContext.PathSpecs = null;
@@ -31,6 +31,6 @@ namespace DeleteStuff.UnitTests.Core.Commands.Stats.Stages {
 
     private LoadSpecsStage mStage;
     private Context mContext;
-    private Mock<ILoadSpecsOperation> mOperation;
+    private Mock<ILoadPathSpecsOperation> mOperation;
   }
 }

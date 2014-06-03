@@ -1,6 +1,6 @@
 ﻿using Autofac;
-using DeleteStuff.Core.Model.ConfigurationRepository.LoadSpecsOperation;
-using DeleteStuff.Core.Model.ConfigurationRepository.LoadSpecsOperation.Stages;
+using DeleteStuff.Core.Model.ConfigurationRepository.LoadPathSpecsOperation;
+using DeleteStuff.Core.Model.ConfigurationRepository.LoadPathSpecsOperation.Stages;
 
 namespace DeleteStuff.Core.ObjectFactory.Module {
   public class LoadSpecsOperationModule : BaseModule {
@@ -14,7 +14,7 @@ namespace DeleteStuff.Core.ObjectFactory.Module {
       builder
         .RegisterType<Operation>()
         .InstancePerLifetimeScope()
-        .As<ILoadSpecsOperation>();
+        .As<ILoadPathSpecsOperation>();
     }
 
     private static void RegisterStages(ContainerBuilder builder) {

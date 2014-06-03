@@ -1,11 +1,11 @@
 ﻿using DeleteStuff.Core.External;
 using DeleteStuff.Core.Model.ConfigurationRepository.LoadOperation;
-using DeleteStuff.Core.Model.ConfigurationRepository.LoadSpecsOperation.Stages;
+using DeleteStuff.Core.Model.ConfigurationRepository.LoadPathSpecsOperation.Stages;
 using Moq;
 using NUnit.Framework;
-using Context = DeleteStuff.Core.Model.ConfigurationRepository.LoadSpecsOperation.Context;
+using Context = DeleteStuff.Core.Model.ConfigurationRepository.LoadPathSpecsOperation.Context;
 
-namespace DeleteStuff.UnitTests.Core.Model.ConfigurationRepository.LoadSpecsOperation.Stages {
+namespace DeleteStuff.UnitTests.Core.Model.ConfigurationRepository.LoadPathSpecsOperation.Stages {
   [TestFixture]
   public class LoadConfigurationStageTest : BaseTestCase {
     [Test]
