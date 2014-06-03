@@ -12,6 +12,7 @@ namespace DeleteStuff.Core.ObjectFactory.Module {
       builder.RegisterModule(new PipelineModule());
       builder.RegisterModule(new LoadOperationModule());
       builder.RegisterModule(new StatsCommandModule());
+      builder.RegisterModule(new LoadSpecsOperationModule());
     }
   }
 }

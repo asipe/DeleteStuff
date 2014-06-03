@@ -75,6 +75,10 @@
     <Compile Include="Core\Model\ConfigurationRepository\LoadOperation\Stages\LoadConfigurationFileStageTest.cs" />
     <Compile Include="Core\Model\ConfigurationRepository\LoadOperation\Stages\ValidateConfigurationFileExistsStageTest.cs" />
     <Compile Include="Core\Model\ConfigurationRepository\LoadOperation\Stages\ValidateConfigurationStageTest.cs" />
+    <Compile Include="Core\Model\ConfigurationRepository\LoadSpecsOperation\ContextTest.cs" />
+    <Compile Include="Core\Model\ConfigurationRepository\LoadSpecsOperation\OperationTest.cs" />
+    <Compile Include="Core\Model\ConfigurationRepository\LoadSpecsOperation\Stages\FilterspecsStage.cs" />
+    <Compile Include="Core\Model\ConfigurationRepository\LoadSpecsOperation\Stages\LoadConfigurationStageTest.cs" />
     <Compile Include="Core\Utility\JsonSerializerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

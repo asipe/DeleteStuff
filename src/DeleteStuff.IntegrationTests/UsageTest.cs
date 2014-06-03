@@ -124,7 +124,8 @@ namespace DeleteStuff.IntegrationTests {
 
     [Test]
     [Ignore("in progress")]
-    public void TestStatsWithUnknownCommand() {
+    public void TestStatsWithUnknownSpec() {
+      Helper.WriteJsonConfig(new ExecutionConfig {Specs = new PathSpec[0]});
       var result = Helper.ProcessExecutor.Start("stats", "project0");
       Assert.That(result.ExitCode, Is.EqualTo(1));
       Assert.That(result.StandardOutput, Is.Empty);

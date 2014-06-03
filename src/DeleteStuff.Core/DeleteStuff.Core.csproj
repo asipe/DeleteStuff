@@ -70,6 +70,11 @@
     <Compile Include="Model\ConfigurationRepository\LoadOperation\Stages\LoadConfigurationFileStage.cs" />
     <Compile Include="Model\ConfigurationRepository\LoadOperation\Stages\ValidateConfigurationFileExistsStage.cs" />
     <Compile Include="Model\ConfigurationRepository\LoadOperation\Stages\ValidateConfigurationStage.cs" />
+    <Compile Include="Model\ConfigurationRepository\LoadSpecsOperation\Context.cs" />
+    <Compile Include="Model\ConfigurationRepository\LoadSpecsOperation\ILoadSpecsOperation.cs" />
+    <Compile Include="Model\ConfigurationRepository\LoadSpecsOperation\Operation.cs" />
+    <Compile Include="Model\ConfigurationRepository\LoadSpecsOperation\Stages\FilterSpecsStage.cs" />
+    <Compile Include="Model\ConfigurationRepository\LoadSpecsOperation\Stages\LoadConfigurationStage.cs" />
     <Compile Include="ObjectFactory\Factory.cs" />
     <Compile Include="ObjectFactory\IFactory.cs" />
     <Compile Include="ObjectFactory\IModuleConfiguration.cs" />
@@ -80,6 +85,7 @@
     <Compile Include="ObjectFactory\Module\IOModule.cs" />
     <Compile Include="ObjectFactory\Module\ListConfigCommandModule.cs" />
     <Compile Include="ObjectFactory\Module\LoadOperationModule.cs" />
+    <Compile Include="ObjectFactory\Module\LoadSpecsOperationModule.cs" />
     <Compile Include="ObjectFactory\Module\OutputModule.cs" />
     <Compile Include="ObjectFactory\Module\PipelineModule.cs" />
     <Compile Include="ObjectFactory\Module\SerializerModule.cs" />
