@@ -1,4 +1,6 @@
-﻿namespace DeleteStuff.Core.Commands.Stats {
+﻿using DeleteStuff.Core.External;
+
+namespace DeleteStuff.Core.Commands.Stats {
   public class Context {
     public Context(params string[] args) {
       Args = args;
@@ -6,5 +8,6 @@
 
     public string[] Args{get;set;}
     public string[] Names{get;set;}
+    public PathSpec[] PathSpecs{get;set;}
   }
 }

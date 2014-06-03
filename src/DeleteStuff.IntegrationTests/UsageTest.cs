@@ -123,7 +123,6 @@ namespace DeleteStuff.IntegrationTests {
     }
 
     [Test]
-    [Ignore("in progress")]
     public void TestStatsWithUnknownSpec() {
       Helper.WriteJsonConfig(new ExecutionConfig {Specs = new PathSpec[0]});
       var result = Helper.ProcessExecutor.Start("stats", "project0");

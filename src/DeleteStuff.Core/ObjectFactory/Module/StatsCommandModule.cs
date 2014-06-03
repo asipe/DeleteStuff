@@ -21,6 +21,7 @@ namespace DeleteStuff.Core.ObjectFactory.Module {
     private static void RegisterStages(ContainerBuilder builder) {
       RegisterStage<ExtractNamesStage, Context>(builder, 0);
       RegisterStage<ValidateNamesStage, Context>(builder, 1);
+      RegisterStage<LoadSpecsStage, Context>(builder, 2);
     }
   }
 }
