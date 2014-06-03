@@ -67,6 +67,8 @@
     <Compile Include="Core\Commands\Config\List\Stages\LoadConfigurationStageTest.cs" />
     <Compile Include="Core\Commands\Stats\ContextTest.cs" />
     <Compile Include="Core\Commands\Stats\CommandTest.cs" />
+    <Compile Include="Core\Commands\Stats\Stages\ExtractNamesStageTest.cs" />
+    <Compile Include="Core\Commands\Stats\Stages\ValidateNamesStageTest.cs" />
     <Compile Include="Core\External\ExecutionConfigTest.cs" />
     <Compile Include="Core\External\PathSpecTest.cs" />
     <Compile Include="Core\Model\ConfigurationRepository\LoadOperation\OperationTest.cs" />

@@ -60,6 +60,8 @@
     <Compile Include="Commands\ICommand.cs" />
     <Compile Include="Commands\Stats\Command.cs" />
     <Compile Include="Commands\Stats\Context.cs" />
+    <Compile Include="Commands\Stats\Stages\ExtractNamesStage.cs" />
+    <Compile Include="Commands\Stats\Stages\ValidateNamesStage.cs" />
     <Compile Include="DeleteStuffException.cs" />
     <Compile Include="External\ExecutionConfig.cs" />
     <Compile Include="External\PathSpec.cs" />
@@ -96,9 +98,7 @@
     <Compile Include="Utility\ISerializer.cs" />
     <Compile Include="Utility\JsonSerializer.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Commands\Stats\Stages\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

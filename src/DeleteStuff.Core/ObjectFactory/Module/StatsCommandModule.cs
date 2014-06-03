@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using DeleteStuff.Core.Commands;
 using DeleteStuff.Core.Commands.Stats;
+using DeleteStuff.Core.Commands.Stats.Stages;
 
 namespace DeleteStuff.Core.ObjectFactory.Module {
   public class StatsCommandModule : BaseModule {
@@ -18,8 +19,8 @@ namespace DeleteStuff.Core.ObjectFactory.Module {
     }
 
     private static void RegisterStages(ContainerBuilder builder) {
-      //RegisterStage<LoadConfigurationStage, dynamic>(builder, 0);
-     // RegisterStage<EchoConfigurationStage, Context>(builder, 1);
+      RegisterStage<ExtractNamesStage, Context>(builder, 0);
+      RegisterStage<ValidateNamesStage, Context>(builder, 1);
     }
   }
 }

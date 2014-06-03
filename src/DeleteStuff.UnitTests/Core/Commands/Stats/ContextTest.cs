@@ -8,6 +8,7 @@ namespace DeleteStuff.UnitTests.Core.Commands.Stats {
     public void TestDefaults() {
       var context = new Context("a", "b", "c");
       Assert.That(context.Args, Is.EqualTo(BA("a", "b", "c")));
+      Assert.That(context.Names, Is.Null);
     }
   }
 }

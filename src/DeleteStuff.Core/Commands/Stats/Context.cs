@@ -4,6 +4,7 @@
       Args = args;
     }
 
-    public string[] Args{get;private set;}
+    public string[] Args{get;set;}
+    public string[] Names{get;set;}
   }
 }
