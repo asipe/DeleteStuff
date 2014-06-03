@@ -36,7 +36,7 @@ namespace DeleteStuff.UnitTests.Core.Commands.Stats.Stages {
       mObserver.Setup(o => o.OnInfo(""));
       mStage.Execute(mContext, null);
     }
-    
+
     [Test]
     public void TestExecuteWithMultipleSpecsEchos() {
       mObserver.Setup(o => o.OnInfo(mContext.PathSpecs[0].Name));
