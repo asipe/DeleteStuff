@@ -15,7 +15,7 @@ namespace DeleteStuff.UnitTests.Core.Model.ConfigurationRepository.LoadSpecsOper
     public void TestExecuteWithNoSpecNamesSetsSpecsToEmpty() {
       mContext.Names = CM<string>(0);
       mStage.Execute(mContext, null);
-      Assert.That(mContext.Specs, Is.Empty);
+      Assert.That(mContext.PathSpecs, Is.Empty);
     }
 
     [Test]
@@ -23,7 +23,7 @@ namespace DeleteStuff.UnitTests.Core.Model.ConfigurationRepository.LoadSpecsOper
       mContext.Names = CM<string>(1);
       mContext.Configuration.Specs[0].Name = mContext.Names[0];
       mStage.Execute(mContext, null);
-      AssertAreEqual(mContext.Specs, BA(mContext.Configuration.Specs[0]));
+      AssertAreEqual(mContext.PathSpecs, BA(mContext.Configuration.Specs[0]));
     }
 
     [Test]
@@ -32,7 +32,7 @@ namespace DeleteStuff.UnitTests.Core.Model.ConfigurationRepository.LoadSpecsOper
       mContext.Configuration.Specs[1].Name = mContext.Names[1];
       mContext.Configuration.Specs[2].Name = mContext.Names[2];
       mStage.Execute(mContext, null);
-      AssertAreEqual(mContext.Specs, mContext.Configuration.Specs);
+      AssertAreEqual(mContext.PathSpecs, mContext.Configuration.Specs);
     }
 
     [Test]
@@ -46,7 +46,7 @@ namespace DeleteStuff.UnitTests.Core.Model.ConfigurationRepository.LoadSpecsOper
     public void DoSetup() {
       mStage = new FilterSpecsStage(33);
       mContext = CA<Context>();
-      mContext.Specs = null;
+      mContext.PathSpecs = null;
     }
 
     private FilterSpecsStage mStage;

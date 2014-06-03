@@ -7,7 +7,7 @@ namespace DeleteStuff.Core.Model.ConfigurationRepository.LoadSpecsOperation {
     }
 
     public string[] Names{get;set;}
-    public PathSpec[] Specs{get;set;}
+    public PathSpec[] PathSpecs{get;set;}
     public ExecutionConfig Configuration{get;set;}
   }
 }

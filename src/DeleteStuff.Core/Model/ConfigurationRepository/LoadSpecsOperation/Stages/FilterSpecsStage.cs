@@ -8,7 +8,7 @@ namespace DeleteStuff.Core.Model.ConfigurationRepository.LoadSpecsOperation.Stag
     public FilterSpecsStage(int priority) : base(priority) {}
 
     protected override void DoExecute(Context context) {
-      context.Specs = FilterSpecs(context.Configuration.Specs, context.Names);
+      context.PathSpecs = FilterSpecs(context.Configuration.Specs, context.Names);
     }
 
     private static PathSpec[] FilterSpecs(IEnumerable<PathSpec> availableSpecs, IEnumerable<string> names) {

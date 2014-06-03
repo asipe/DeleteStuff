@@ -10,7 +10,7 @@ namespace DeleteStuff.Core.Model.ConfigurationRepository.LoadSpecsOperation {
     public PathSpec[] Load(params string[] names) {
       var context = new Context(names);
       mPipeline.Execute(context);
-      return context.Specs;
+      return context.PathSpecs;
     }
 
     private readonly IPipeline<Context> mPipeline;

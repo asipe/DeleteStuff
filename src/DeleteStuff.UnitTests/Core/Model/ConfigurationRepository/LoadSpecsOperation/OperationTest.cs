@@ -12,7 +12,7 @@ namespace DeleteStuff.UnitTests.Core.Model.ConfigurationRepository.LoadSpecsOper
       var specs = CM<PathSpec>(0);
       mPipeline
         .Setup(p => p.Execute(ItIs(new Context("A", "B"))))
-        .Callback<Context>(c => c.Specs = specs);
+        .Callback<Context>(c => c.PathSpecs = specs);
       Assert.That(mOperation.Load("A", "B"), Is.EqualTo(specs));
     }
 
