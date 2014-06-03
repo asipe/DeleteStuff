@@ -8,8 +8,8 @@ namespace DeleteStuff.UnitTests.Core.Commands.Stats {
   public class CommandTest : BaseTestCase {
     [Test]
     public void TestExecuteDelegatesToPipeline() {
-      mPipeline.Setup(p => p.Execute(ItIs(new Context())));
-      mCommand.Execute();
+      mPipeline.Setup(p => p.Execute(ItIs(new Context("A", "B"))));
+      mCommand.Execute(BA("A", "B"));
     }
 
     [SetUp]
