@@ -11,7 +11,7 @@ namespace DeleteStuff.UnitTests.Core.Model.ConfigurationRepository.LoadPathSpecs
     public void TestExecuteDelegatesToPipeline() {
       var specs = CM<PathSpec>(0);
       mPipeline
-        .Setup(p => p.Execute(ItIs(new Context("A", "B"))))
+        .Setup(p => p.Execute(Arg.Is(new Context("A", "B"))))
         .Callback<Context>(c => c.PathSpecs = specs);
       Assert.That(mOperation.Load("A", "B"), Is.EqualTo(specs));
     }

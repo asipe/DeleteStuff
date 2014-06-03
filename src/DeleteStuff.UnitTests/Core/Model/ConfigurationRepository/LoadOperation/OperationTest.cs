@@ -11,7 +11,7 @@ namespace DeleteStuff.UnitTests.Core.Model.ConfigurationRepository.LoadOperation
     public void TestExecuteDelegatesToPipeline() {
       var cfg = CA<ExecutionConfig>();
       mPipeline
-        .Setup(p => p.Execute(ItIs(new Context())))
+        .Setup(p => p.Execute(Arg.Is(new Context())))
         .Callback<Context>(c => c.ExecutionConfig = cfg);
       Assert.That(mOperation.Load(), Is.EqualTo(cfg));
     }

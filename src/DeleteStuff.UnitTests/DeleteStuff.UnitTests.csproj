@@ -57,6 +57,7 @@
     <Compile Include="..\DeleteStuff.Properties\AssemblyInfo.cs">
       <Link>AssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="Arg.cs" />
     <Compile Include="BaseTestCase.cs" />
     <Compile Include="Core\App\DeleteStuffApplicationTest.cs" />
     <Compile Include="Core\Commands\Common\CommandIndexTest.cs" />
