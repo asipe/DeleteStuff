@@ -115,7 +115,7 @@ namespace DeleteStuff.IntegrationTests {
 
     [Test]
     public void TestStatsWithNoSpec() {
-      Helper.WriteJsonConfig(new ExecutionConfig { Specs = new PathSpec[0] });
+      Helper.WriteJsonConfig(new ExecutionConfig {Specs = new PathSpec[0]});
       var result = Helper.ProcessExecutor.Start("stats");
       Assert.That(result.ExitCode, Is.EqualTo(1));
       Assert.That(result.StandardOutput, Is.Empty);
@@ -132,7 +132,6 @@ namespace DeleteStuff.IntegrationTests {
     }
 
     [Test]
-    [Ignore("in progress")]
     public void TestStatsWithSingleSpecNoFiles() {
       Helper.DataDirectory.CreateDirectories("proj0");
       Helper.WriteJsonConfig(new ExecutionConfig {
@@ -148,18 +147,17 @@ namespace DeleteStuff.IntegrationTests {
       var result = Helper.ProcessExecutor.Start("stats", "project0");
       Assert.That(result.ExitCode, Is.EqualTo(0));
       Assert.That(result.StandardOutput, Is.EqualTo(Helper.BuildOutput("project0",
-                                                                       "   0 Files" +
-                                                                       "   0 Bytes",
+                                                                       "   0 files",
+                                                                       "   0 bytes",
                                                                        "",
                                                                        "total",
-                                                                       "   0 Files",
-                                                                       "   0 Bytes",
+                                                                       "   0 files",
+                                                                       "   0 bytes",
                                                                        "")));
       Assert.That(result.StandardError, Is.Empty);
     }
 
     [Test]
-    [Ignore("in progress")]
     public void TestStatsWithMultipleSpecsNoFiles() {
       Helper.DataDirectory.CreateDirectories("proj0", "proj1");
       Helper.WriteJsonConfig(new ExecutionConfig {
@@ -181,16 +179,16 @@ namespace DeleteStuff.IntegrationTests {
       var result = Helper.ProcessExecutor.Start("stats", "project0", "project1");
       Assert.That(result.ExitCode, Is.EqualTo(0));
       Assert.That(result.StandardOutput, Is.EqualTo(Helper.BuildOutput("project0",
-                                                                       "   0 Files" +
-                                                                       "   0 Bytes",
+                                                                       "   0 files",
+                                                                       "   0 bytes",
                                                                        "",
                                                                        "project1",
-                                                                       "   0 Files" +
-                                                                       "   0 Bytes",
+                                                                       "   0 files",
+                                                                       "   0 bytes",
                                                                        "",
                                                                        "total",
-                                                                       "   0 Files",
-                                                                       "   0 Bytes",
+                                                                       "   0 files",
+                                                                       "   0 bytes",
                                                                        "")));
       Assert.That(result.StandardError, Is.Empty);
     }

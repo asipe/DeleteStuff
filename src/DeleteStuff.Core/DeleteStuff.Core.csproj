@@ -60,6 +60,7 @@
     <Compile Include="Commands\ICommand.cs" />
     <Compile Include="Commands\Stats\Command.cs" />
     <Compile Include="Commands\Stats\Context.cs" />
+    <Compile Include="Commands\Stats\Stages\EchoStatsStage.cs" />
     <Compile Include="Commands\Stats\Stages\ExtractNamesStage.cs" />
     <Compile Include="Commands\Stats\Stages\LoadSpecsStage.cs" />
     <Compile Include="Commands\Stats\Stages\ValidateNamesStage.cs" />
