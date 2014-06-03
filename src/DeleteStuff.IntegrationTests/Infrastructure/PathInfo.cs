@@ -23,5 +23,9 @@ namespace DeleteStuff.IntegrationTests.Infrastructure {
     public string DebugDir{get;private set;}
     public string ConsoleDebugDir{get;private set;}
     public string TestWorkingDir{get;private set;}
+
+    public string GetDataPath(string path) {
+      return Path.Combine(TestDataDir, path);
+    }
   }
 }

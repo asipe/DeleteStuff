@@ -53,6 +53,7 @@
     </Compile>
     <Compile Include="BaseTest.cs" />
     <Compile Include="GlobalSetup.cs" />
+    <Compile Include="Infrastructure\DataDirectory.cs" />
     <Compile Include="Infrastructure\DeleteStuffHelper.cs" />
     <Compile Include="Infrastructure\ExecutionResult.cs" />
     <Compile Include="Infrastructure\ProcessExecutor.cs" />

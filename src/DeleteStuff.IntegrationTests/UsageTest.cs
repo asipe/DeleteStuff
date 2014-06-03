@@ -112,5 +112,87 @@ namespace DeleteStuff.IntegrationTests {
                                                                        "")));
       Assert.That(result.StandardError, Is.Empty);
     }
+
+    [Test]
+    [Ignore("in progress")]
+    public void TestStatsWithNoSpec() {
+      var result = Helper.ProcessExecutor.Start("stats");
+      Assert.That(result.ExitCode, Is.EqualTo(1));
+      Assert.That(result.StandardOutput, Is.Empty);
+      Assert.That(result.StandardError, Is.EqualTo(Helper.BuildOutput("Missing Spec")));
+    }
+
+    [Test]
+    [Ignore("in progress")]
+    public void TestStatsWithUnknownCommand() {
+      var result = Helper.ProcessExecutor.Start("stats", "project0");
+      Assert.That(result.ExitCode, Is.EqualTo(1));
+      Assert.That(result.StandardOutput, Is.Empty);
+      Assert.That(result.StandardError, Is.EqualTo(Helper.BuildOutput("Unknown Spec: project0")));
+    }
+
+    [Test]
+    [Ignore("in progress")]
+    public void TestStatsWithSingleSpecNoFiles() {
+      Helper.DataDirectory.CreateDirectories("proj0");
+      Helper.WriteJsonConfig(new ExecutionConfig {
+                                                   Specs = new[] {
+                                                                   new PathSpec {
+                                                                                  Name = "project0",
+                                                                                  Entries = new[] {
+                                                                                                    Helper.DataDirectory.GetDirectory("proj0")
+                                                                                                  }
+                                                                                }
+                                                                 }
+                                                 });
+      var result = Helper.ProcessExecutor.Start("stats", "project0");
+      Assert.That(result.ExitCode, Is.EqualTo(0));
+      Assert.That(result.StandardOutput, Is.EqualTo(Helper.BuildOutput("project0",
+                                                                       "   0 Files" +
+                                                                       "   0 Bytes",
+                                                                       "",
+                                                                       "total",
+                                                                       "   0 Files",
+                                                                       "   0 Bytes",
+                                                                       "")));
+      Assert.That(result.StandardError, Is.Empty);
+    }
+
+    [Test]
+    [Ignore("in progress")]
+    public void TestStatsWithMultipleSpecsNoFiles() {
+      Helper.DataDirectory.CreateDirectories("proj0", "proj1");
+      Helper.WriteJsonConfig(new ExecutionConfig {
+                                                   Specs = new[] {
+                                                                   new PathSpec {
+                                                                                  Name = "project0",
+                                                                                  Entries = new[] {
+                                                                                                    Helper.DataDirectory.GetDirectory("proj0")
+                                                                                                  }
+                                                                                },
+                                                                   new PathSpec {
+                                                                                  Name = "project1",
+                                                                                  Entries = new[] {
+                                                                                                    Helper.DataDirectory.GetDirectory("proj1")
+                                                                                                  }
+                                                                                }
+                                                                 }
+                                                 });
+      var result = Helper.ProcessExecutor.Start("stats", "project0", "project1");
+      Assert.That(result.ExitCode, Is.EqualTo(0));
+      Assert.That(result.StandardOutput, Is.EqualTo(Helper.BuildOutput("project0",
+                                                                       "   0 Files" +
+                                                                       "   0 Bytes",
+                                                                       "",
+                                                                       "project1",
+                                                                       "   0 Files" +
+                                                                       "   0 Bytes",
+                                                                       "",
+                                                                       "total",
+                                                                       "   0 Files",
+                                                                       "   0 Bytes",
+                                                                       "")));
+      Assert.That(result.StandardError, Is.Empty);
+    }
   }
 }

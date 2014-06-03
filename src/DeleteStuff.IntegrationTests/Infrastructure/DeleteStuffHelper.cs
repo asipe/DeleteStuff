@@ -8,11 +8,13 @@ namespace DeleteStuff.IntegrationTests.Infrastructure {
     public TestEnvironment TestEnvironment{get;private set;}
     public PathInfo PathInfo{get;private set;}
     public ProcessExecutor ProcessExecutor{get;private set;}
+    public DataDirectory DataDirectory{get;private set;}
 
     public void Setup() {
       TestEnvironment = GlobalSetup.TestEnvironment;
       PathInfo = GlobalSetup.PathInfo;
       ProcessExecutor = new ProcessExecutor(PathInfo);
+      DataDirectory = new DataDirectory(PathInfo);
       DeleteJsonConfig();
     }
 
