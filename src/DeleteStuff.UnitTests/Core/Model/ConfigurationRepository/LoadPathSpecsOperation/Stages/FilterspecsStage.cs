@@ -15,24 +15,24 @@ namespace DeleteStuff.UnitTests.Core.Model.ConfigurationRepository.LoadPathSpecs
     public void TestExecuteWithNoSpecNamesSetsSpecsToEmpty() {
       mContext.Names = CM<string>(0);
       mStage.Execute(mContext, null);
-      Assert.That(mContext.PathSpecs, Is.Empty);
+      Assert.That(mContext.PathSpecifications, Is.Empty);
     }
 
     [Test]
     public void TestExecuteWithSingleSpecNameThatIsAvailableSetsSpecs() {
       mContext.Names = CM<string>(1);
-      mContext.Configuration.Specs[0].Name = mContext.Names[0];
+      mContext.Configuration.PathSpecifications[0].Name = mContext.Names[0];
       mStage.Execute(mContext, null);
-      AssertAreEqual(mContext.PathSpecs, BA(mContext.Configuration.Specs[0]));
+      AssertAreEqual(mContext.PathSpecifications, BA(mContext.Configuration.PathSpecifications[0]));
     }
 
     [Test]
     public void TestExecuteWithMultipleSpecNamesThatareAvailableSetsSpecs() {
-      mContext.Configuration.Specs[0].Name = mContext.Names[0];
-      mContext.Configuration.Specs[1].Name = mContext.Names[1];
-      mContext.Configuration.Specs[2].Name = mContext.Names[2];
+      mContext.Configuration.PathSpecifications[0].Name = mContext.Names[0];
+      mContext.Configuration.PathSpecifications[1].Name = mContext.Names[1];
+      mContext.Configuration.PathSpecifications[2].Name = mContext.Names[2];
       mStage.Execute(mContext, null);
-      AssertAreEqual(mContext.PathSpecs, mContext.Configuration.Specs);
+      AssertAreEqual(mContext.PathSpecifications, mContext.Configuration.PathSpecifications);
     }
 
     [Test]
@@ -46,7 +46,7 @@ namespace DeleteStuff.UnitTests.Core.Model.ConfigurationRepository.LoadPathSpecs
     public void DoSetup() {
       mStage = new FilterSpecsStage(33);
       mContext = CA<Context>();
-      mContext.PathSpecs = null;
+      mContext.PathSpecifications = null;
     }
 
     private FilterSpecsStage mStage;

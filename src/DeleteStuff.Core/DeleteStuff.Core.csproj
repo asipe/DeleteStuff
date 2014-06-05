@@ -66,7 +66,7 @@
     <Compile Include="Commands\Stats\Stages\ValidateNamesStage.cs" />
     <Compile Include="DeleteStuffException.cs" />
     <Compile Include="External\ExecutionConfig.cs" />
-    <Compile Include="External\PathSpec.cs" />
+    <Compile Include="External\PathSpecification.cs" />
     <Compile Include="Model\ConfigurationRepository\LoadOperation\Operation.cs" />
     <Compile Include="Model\ConfigurationRepository\LoadOperation\Context.cs" />
     <Compile Include="Model\ConfigurationRepository\LoadOperation\ILoadOperation.cs" />

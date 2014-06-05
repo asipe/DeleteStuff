@@ -15,10 +15,10 @@ namespace DeleteStuff.UnitTests.Core.Commands.Stats.Stages {
 
     [Test]
     public void TestExecuteLoadsSpecsUsingOperation() {
-      var specs = CM<PathSpec>(1);
+      var specs = CM<PathSpecification>(1);
       mOperation.Setup(o => o.Load(mContext.Names)).Returns(specs);
       mStage.Execute(mContext, null);
-      Assert.That(mContext.PathSpecs, Is.EqualTo(specs));
+      Assert.That(mContext.PathSpecifications, Is.EqualTo(specs));
     }
 
     [SetUp]
@@ -26,7 +26,7 @@ namespace DeleteStuff.UnitTests.Core.Commands.Stats.Stages {
       mOperation = Mok<ILoadPathSpecsOperation>();
       mStage = new LoadSpecsStage(33, mOperation.Object);
       mContext = CA<Context>();
-      mContext.PathSpecs = null;
+      mContext.PathSpecifications = null;
     }
 
     private LoadSpecsStage mStage;

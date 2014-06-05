@@ -2,6 +2,6 @@
 
 namespace DeleteStuff.Core.Model.ConfigurationRepository.LoadPathSpecsOperation {
   public interface ILoadPathSpecsOperation {
-    PathSpec[] Load(params string[] names);
+    PathSpecification[] Load(params string[] names);
   }
 }

@@ -7,7 +7,7 @@ namespace DeleteStuff.UnitTests.Core.External {
     [Test]
     public void TestDefaults() {
       var spec = new ExecutionConfig();
-      Assert.That(spec.Specs, Is.Null);
+      Assert.That(spec.PathSpecifications, Is.Null);
     }
   }
 }

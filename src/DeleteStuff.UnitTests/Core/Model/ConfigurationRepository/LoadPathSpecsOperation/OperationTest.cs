@@ -9,10 +9,10 @@ namespace DeleteStuff.UnitTests.Core.Model.ConfigurationRepository.LoadPathSpecs
   public class OperationTest : BaseTestCase {
     [Test]
     public void TestExecuteDelegatesToPipeline() {
-      var specs = CM<PathSpec>(0);
+      var specs = CM<PathSpecification>(0);
       mPipeline
         .Setup(p => p.Execute(Arg.Is(new Context("A", "B"))))
-        .Callback<Context>(c => c.PathSpecs = specs);
+        .Callback<Context>(c => c.PathSpecifications = specs);
       Assert.That(mOperation.Load("A", "B"), Is.EqualTo(specs));
     }
 

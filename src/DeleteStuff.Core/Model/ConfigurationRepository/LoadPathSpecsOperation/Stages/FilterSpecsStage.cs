@@ -8,16 +8,16 @@ namespace DeleteStuff.Core.Model.ConfigurationRepository.LoadPathSpecsOperation.
     public FilterSpecsStage(int priority) : base(priority) {}
 
     protected override void DoExecute(Context context) {
-      context.PathSpecs = FilterSpecs(context.Configuration.Specs, context.Names);
+      context.PathSpecifications = FilterSpecs(context.Configuration.PathSpecifications, context.Names);
     }
 
-    private static PathSpec[] FilterSpecs(IEnumerable<PathSpec> availableSpecs, IEnumerable<string> names) {
+    private static PathSpecification[] FilterSpecs(IEnumerable<PathSpecification> availableSpecs, IEnumerable<string> names) {
       return names
         .Select(name => FindSpec(availableSpecs, name))
         .ToArray();
     }
 
-    private static PathSpec FindSpec(IEnumerable<PathSpec> availableSpecs, string name) {
+    private static PathSpecification FindSpec(IEnumerable<PathSpecification> availableSpecs, string name) {
       var spec = availableSpecs.FirstOrDefault(s => s.Name == name);
       if (spec == null)
         throw new DeleteStuffException("Unknown Spec: {0}", name);

@@ -58,7 +58,7 @@ namespace DeleteStuff.IntegrationTests {
 
     [Test]
     public void TestListConfigurationWhenNoPathSpecs() {
-      Helper.WriteJsonConfig(new ExecutionConfig {Specs = new PathSpec[0]});
+      Helper.WriteJsonConfig(new ExecutionConfig {PathSpecifications = new PathSpecification[0]});
       var result = Helper.ProcessExecutor.Start("config", "list");
       Assert.That(result.ExitCode, Is.EqualTo(0));
       Assert.That(result.StandardOutput, Is.Empty);
@@ -68,31 +68,31 @@ namespace DeleteStuff.IntegrationTests {
     [Test]
     public void TestListConfigurationWhenPathSpecs() {
       Helper.WriteJsonConfig(new ExecutionConfig {
-                                                   Specs = new[] {
-                                                                   new PathSpec {
-                                                                                  Name = "project0",
-                                                                                  Include = new string[0]
-                                                                                },
-                                                                   new PathSpec {
-                                                                                  Name = "project1",
-                                                                                  Include = new[] {@"c:\project1\bin\*.exe"}
-                                                                                },
-                                                                   new PathSpec {
-                                                                                  Name = "project2",
-                                                                                  Include = new[] {
-                                                                                                    @"c:\project2\bin\*.exe",
-                                                                                                    @"c:\project2\obj\*.dll"
-                                                                                                  }
-                                                                                },
-                                                                   new PathSpec {
-                                                                                  Name = "project3",
-                                                                                  Include = new[] {
-                                                                                                    @"c:\project3\bin\*.exe",
-                                                                                                    @"c:\project3\obj\*.dll",
-                                                                                                    @"c:\project3\app_data\**\*.*"
-                                                                                                  }
-                                                                                }
-                                                                 }
+                                                   PathSpecifications = new[] {
+                                                                                new PathSpecification {
+                                                                                                        Name = "project0",
+                                                                                                        Includes = new string[0]
+                                                                                                      },
+                                                                                new PathSpecification {
+                                                                                                        Name = "project1",
+                                                                                                        Includes = new[] {@"c:\project1\bin\*.exe"}
+                                                                                                      },
+                                                                                new PathSpecification {
+                                                                                                        Name = "project2",
+                                                                                                        Includes = new[] {
+                                                                                                                          @"c:\project2\bin\*.exe",
+                                                                                                                          @"c:\project2\obj\*.dll"
+                                                                                                                        }
+                                                                                                      },
+                                                                                new PathSpecification {
+                                                                                                        Name = "project3",
+                                                                                                        Includes = new[] {
+                                                                                                                          @"c:\project3\bin\*.exe",
+                                                                                                                          @"c:\project3\obj\*.dll",
+                                                                                                                          @"c:\project3\app_data\**\*.*"
+                                                                                                                        }
+                                                                                                      }
+                                                                              }
                                                  });
       var result = Helper.ProcessExecutor.Start("config", "list");
       Assert.That(result.ExitCode, Is.EqualTo(0));
@@ -115,7 +115,7 @@ namespace DeleteStuff.IntegrationTests {
 
     [Test]
     public void TestStatsWithNoSpec() {
-      Helper.WriteJsonConfig(new ExecutionConfig {Specs = new PathSpec[0]});
+      Helper.WriteJsonConfig(new ExecutionConfig {PathSpecifications = new PathSpecification[0]});
       var result = Helper.ProcessExecutor.Start("stats");
       Assert.That(result.ExitCode, Is.EqualTo(1));
       Assert.That(result.StandardOutput, Is.Empty);
@@ -124,7 +124,7 @@ namespace DeleteStuff.IntegrationTests {
 
     [Test]
     public void TestStatsWithUnknownSpec() {
-      Helper.WriteJsonConfig(new ExecutionConfig {Specs = new PathSpec[0]});
+      Helper.WriteJsonConfig(new ExecutionConfig {PathSpecifications = new PathSpecification[0]});
       var result = Helper.ProcessExecutor.Start("stats", "project0");
       Assert.That(result.ExitCode, Is.EqualTo(1));
       Assert.That(result.StandardOutput, Is.Empty);
@@ -135,14 +135,14 @@ namespace DeleteStuff.IntegrationTests {
     public void TestStatsWithSingleSpecNoFiles() {
       Helper.DataDirectory.CreateDirectories("proj0");
       Helper.WriteJsonConfig(new ExecutionConfig {
-                                                   Specs = new[] {
-                                                                   new PathSpec {
-                                                                                  Name = "project0",
-                                                                                  Include = new[] {
-                                                                                                    Helper.DataDirectory.GetDirectory("proj0")
-                                                                                                  }
-                                                                                }
-                                                                 }
+                                                   PathSpecifications = new[] {
+                                                                                new PathSpecification {
+                                                                                                        Name = "project0",
+                                                                                                        Includes = new[] {
+                                                                                                                          Helper.DataDirectory.GetDirectory("proj0")
+                                                                                                                        }
+                                                                                                      }
+                                                                              }
                                                  });
       var result = Helper.ProcessExecutor.Start("stats", "project0");
       Assert.That(result.ExitCode, Is.EqualTo(0));
@@ -161,20 +161,20 @@ namespace DeleteStuff.IntegrationTests {
     public void TestStatsWithMultipleSpecsNoFiles() {
       Helper.DataDirectory.CreateDirectories("proj0", "proj1");
       Helper.WriteJsonConfig(new ExecutionConfig {
-                                                   Specs = new[] {
-                                                                   new PathSpec {
-                                                                                  Name = "project0",
-                                                                                  Include = new[] {
-                                                                                                    Helper.DataDirectory.GetDirectory("proj0")
-                                                                                                  }
-                                                                                },
-                                                                   new PathSpec {
-                                                                                  Name = "project1",
-                                                                                  Include = new[] {
-                                                                                                    Helper.DataDirectory.GetDirectory("proj1")
-                                                                                                  }
-                                                                                }
-                                                                 }
+                                                   PathSpecifications = new[] {
+                                                                                new PathSpecification {
+                                                                                                        Name = "project0",
+                                                                                                        Includes = new[] {
+                                                                                                                          Helper.DataDirectory.GetDirectory("proj0")
+                                                                                                                        }
+                                                                                                      },
+                                                                                new PathSpecification {
+                                                                                                        Name = "project1",
+                                                                                                        Includes = new[] {
+                                                                                                                          Helper.DataDirectory.GetDirectory("proj1")
+                                                                                                                        }
+                                                                                                      }
+                                                                              }
                                                  });
       var result = Helper.ProcessExecutor.Start("stats", "project0", "project1");
       Assert.That(result.ExitCode, Is.EqualTo(0));

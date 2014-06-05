@@ -8,6 +8,6 @@ namespace DeleteStuff.Core.Commands.Stats {
 
     public string[] Args{get;set;}
     public string[] Names{get;set;}
-    public PathSpec[] PathSpecs{get;set;}
+    public PathSpecification[] PathSpecifications{get;set;}
   }
 }

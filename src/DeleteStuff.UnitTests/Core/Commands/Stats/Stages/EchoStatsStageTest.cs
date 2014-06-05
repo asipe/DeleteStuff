@@ -15,7 +15,7 @@ namespace DeleteStuff.UnitTests.Core.Commands.Stats.Stages {
 
     [Test]
     public void TestExecuteWithNoSpecsEchosTotal() {
-      mContext.PathSpecs = CM<PathSpec>(0);
+      mContext.PathSpecifications = CM<PathSpecification>(0);
       mObserver.Setup(o => o.OnInfo("total"));
       mObserver.Setup(o => o.OnInfo("   0 files"));
       mObserver.Setup(o => o.OnInfo("   0 bytes"));
@@ -25,8 +25,8 @@ namespace DeleteStuff.UnitTests.Core.Commands.Stats.Stages {
 
     [Test]
     public void TestExecuteWithSingleSpecEchos() {
-      mContext.PathSpecs = CM<PathSpec>(1);
-      mObserver.Setup(o => o.OnInfo(mContext.PathSpecs[0].Name));
+      mContext.PathSpecifications = CM<PathSpecification>(1);
+      mObserver.Setup(o => o.OnInfo(mContext.PathSpecifications[0].Name));
       mObserver.Setup(o => o.OnInfo("   0 files"));
       mObserver.Setup(o => o.OnInfo("   0 bytes"));
       mObserver.Setup(o => o.OnInfo(""));
@@ -39,15 +39,15 @@ namespace DeleteStuff.UnitTests.Core.Commands.Stats.Stages {
 
     [Test]
     public void TestExecuteWithMultipleSpecsEchos() {
-      mObserver.Setup(o => o.OnInfo(mContext.PathSpecs[0].Name));
+      mObserver.Setup(o => o.OnInfo(mContext.PathSpecifications[0].Name));
       mObserver.Setup(o => o.OnInfo("   0 files"));
       mObserver.Setup(o => o.OnInfo("   0 bytes"));
       mObserver.Setup(o => o.OnInfo(""));
-      mObserver.Setup(o => o.OnInfo(mContext.PathSpecs[1].Name));
+      mObserver.Setup(o => o.OnInfo(mContext.PathSpecifications[1].Name));
       mObserver.Setup(o => o.OnInfo("   0 files"));
       mObserver.Setup(o => o.OnInfo("   0 bytes"));
       mObserver.Setup(o => o.OnInfo(""));
-      mObserver.Setup(o => o.OnInfo(mContext.PathSpecs[2].Name));
+      mObserver.Setup(o => o.OnInfo(mContext.PathSpecifications[2].Name));
       mObserver.Setup(o => o.OnInfo("   0 files"));
       mObserver.Setup(o => o.OnInfo("   0 bytes"));
       mObserver.Setup(o => o.OnInfo(""));

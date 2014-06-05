@@ -10,12 +10,12 @@ namespace DeleteStuff.Core.Commands.Stats.Stages {
     }
 
     protected override void DoExecute(Context context) {
-      Array.ForEach(context.PathSpecs, EchoSpec);
+      Array.ForEach(context.PathSpecifications, EchoSpec);
       Echo("total");
     }
 
-    private void EchoSpec(PathSpec spec) {
-      Echo(spec.Name);
+    private void EchoSpec(PathSpecification specification) {
+      Echo(specification.Name);
     }
 
     private void Echo(string name) {

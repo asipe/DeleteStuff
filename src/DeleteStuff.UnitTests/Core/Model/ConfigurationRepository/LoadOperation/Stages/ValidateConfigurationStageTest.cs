@@ -25,7 +25,7 @@ namespace DeleteStuff.UnitTests.Core.Model.ConfigurationRepository.LoadOperation
 
     [Test]
     public void TestConfigurationSpecsAreNull() {
-      mContext.ExecutionConfig.Specs = null;
+      mContext.ExecutionConfig.PathSpecifications = null;
       var ex = Assert.Throws<DeleteStuffException>(() => mStage.Execute(mContext, null));
       Assert.That(ex.Message, Is.EqualTo("deletestuff.json does not contain a valid configuration: specs are null"));
     }

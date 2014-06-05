@@ -8,7 +8,7 @@ namespace DeleteStuff.Core.Commands.Stats.Stages {
     }
 
     protected override void DoExecute(Context context) {
-      context.PathSpecs = mOperation.Load(context.Names);
+      context.PathSpecifications = mOperation.Load(context.Names);
     }
 
     private readonly ILoadPathSpecsOperation mOperation;
