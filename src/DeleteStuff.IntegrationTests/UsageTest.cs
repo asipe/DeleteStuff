@@ -66,6 +66,7 @@ namespace DeleteStuff.IntegrationTests {
     }
 
     [Test]
+    [Ignore("in progress")]
     public void TestListConfigurationWhenPathSpecs() {
       Helper.WriteJsonConfig(new ExecutionConfig {
                                                    PathSpecifications = new[] {
@@ -80,17 +81,54 @@ namespace DeleteStuff.IntegrationTests {
                                                                                 new PathSpecification {
                                                                                                         Name = "project2",
                                                                                                         Includes = new[] {
-                                                                                                                          @"c:\project2\bin\*.exe",
-                                                                                                                          @"c:\project2\obj\*.dll"
-                                                                                                                        }
+                                                                                                                           @"c:\project2\bin\*.exe",
+                                                                                                                           @"c:\project2\obj\*.dll"
+                                                                                                                         }
                                                                                                       },
                                                                                 new PathSpecification {
                                                                                                         Name = "project3",
                                                                                                         Includes = new[] {
-                                                                                                                          @"c:\project3\bin\*.exe",
-                                                                                                                          @"c:\project3\obj\*.dll",
-                                                                                                                          @"c:\project3\app_data\**\*.*"
-                                                                                                                        }
+                                                                                                                           @"c:\project3\bin\*.exe",
+                                                                                                                           @"c:\project3\obj\*.dll",
+                                                                                                                           @"c:\project3\app_data\**\*.*"
+                                                                                                                         }
+                                                                                                      },
+                                                                                new PathSpecification {
+                                                                                                        Name = "project4",
+                                                                                                        Includes = new string[0],
+                                                                                                        References = new[] {"project0"}
+                                                                                                      },
+                                                                                new PathSpecification {
+                                                                                                        Name = "project5",
+                                                                                                        Includes = new string[0],
+                                                                                                        References = new[] {
+                                                                                                                             "project1",
+                                                                                                                             "project2"
+                                                                                                                           }
+                                                                                                      },
+                                                                                new PathSpecification {
+                                                                                                        Name = "project6",
+                                                                                                        Includes = new[] {
+                                                                                                                           @"c:\project3\bin\*.exe",
+                                                                                                                           @"c:\project3\obj\*.dll",
+                                                                                                                           @"c:\project3\app_data\**\*.*",
+                                                                                                                           @"c:\project3\temp\*.*"
+                                                                                                                         },
+                                                                                                        References = new[] {
+                                                                                                                             "project3"
+                                                                                                                           }
+                                                                                                      },
+                                                                                new PathSpecification {
+                                                                                                        Name = "project7",
+                                                                                                        Includes = new string[0],
+                                                                                                        References = new[] {
+                                                                                                                             "project0",
+                                                                                                                             "project1",
+                                                                                                                             "project4",
+                                                                                                                             "project6",
+                                                                                                                             "project0",
+                                                                                                                             "project6"
+                                                                                                                           }
                                                                                                       }
                                                                               }
                                                  });
@@ -109,6 +147,26 @@ namespace DeleteStuff.IntegrationTests {
                                                                        @"   c:\project3\bin\*.exe",
                                                                        @"   c:\project3\obj\*.dll",
                                                                        @"   c:\project3\app_data\**\*.*",
+                                                                       "",
+                                                                       "project4",
+                                                                       "",
+                                                                       "project5",
+                                                                       @"   c:\project1\bin\*.exe",
+                                                                       @"   c:\project2\bin\*.exe",
+                                                                       @"   c:\project2\obj\*.dll",
+                                                                       "",
+                                                                       "project6",
+                                                                       @"   c:\project3\bin\*.exe",
+                                                                       @"   c:\project3\obj\*.dll",
+                                                                       @"   c:\project3\app_data\**\*.*",
+                                                                       @"   c:\project3\temp\*.*",
+                                                                       "",
+                                                                       "project7",
+                                                                       @"   c:\project1\bin\*.exe",
+                                                                       @"   c:\project3\bin\*.exe",
+                                                                       @"   c:\project3\obj\*.dll",
+                                                                       @"   c:\project3\app_data\**\*.*",
+                                                                       @"   c:\project3\temp\*.*",
                                                                        "")));
       Assert.That(result.StandardError, Is.Empty);
     }
@@ -139,8 +197,8 @@ namespace DeleteStuff.IntegrationTests {
                                                                                 new PathSpecification {
                                                                                                         Name = "project0",
                                                                                                         Includes = new[] {
-                                                                                                                          Helper.DataDirectory.GetDirectory("proj0")
-                                                                                                                        }
+                                                                                                                           Helper.DataDirectory.GetDirectory("proj0")
+                                                                                                                         }
                                                                                                       }
                                                                               }
                                                  });
@@ -165,14 +223,14 @@ namespace DeleteStuff.IntegrationTests {
                                                                                 new PathSpecification {
                                                                                                         Name = "project0",
                                                                                                         Includes = new[] {
-                                                                                                                          Helper.DataDirectory.GetDirectory("proj0")
-                                                                                                                        }
+                                                                                                                           Helper.DataDirectory.GetDirectory("proj0")
+                                                                                                                         }
                                                                                                       },
                                                                                 new PathSpecification {
                                                                                                         Name = "project1",
                                                                                                         Includes = new[] {
-                                                                                                                          Helper.DataDirectory.GetDirectory("proj1")
-                                                                                                                        }
+                                                                                                                           Helper.DataDirectory.GetDirectory("proj1")
+                                                                                                                         }
                                                                                                       }
                                                                               }
                                                  });
