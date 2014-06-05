@@ -79,6 +79,8 @@
     <Compile Include="Model\ConfigurationRepository\LoadPathSpecsOperation\Operation.cs" />
     <Compile Include="Model\ConfigurationRepository\LoadPathSpecsOperation\Stages\FilterSpecsStage.cs" />
     <Compile Include="Model\ConfigurationRepository\LoadPathSpecsOperation\Stages\LoadConfigurationStage.cs" />
+    <Compile Include="Model\ExecutionConfiguration.cs" />
+    <Compile Include="Model\PathSpecification.cs" />
     <Compile Include="ObjectFactory\Factory.cs" />
     <Compile Include="ObjectFactory\IFactory.cs" />
     <Compile Include="ObjectFactory\IModuleConfiguration.cs" />

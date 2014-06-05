@@ -84,6 +84,8 @@
     <Compile Include="Core\Model\ConfigurationRepository\LoadPathSpecsOperation\OperationTest.cs" />
     <Compile Include="Core\Model\ConfigurationRepository\LoadPathSpecsOperation\Stages\FilterspecsStage.cs" />
     <Compile Include="Core\Model\ConfigurationRepository\LoadPathSpecsOperation\Stages\LoadConfigurationStageTest.cs" />
+    <Compile Include="Core\Model\ExecutionConfigurationTest.cs" />
+    <Compile Include="Core\Model\PathSpecificationTest.cs" />
     <Compile Include="Core\Utility\JsonSerializerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
