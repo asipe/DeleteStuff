@@ -15,13 +15,13 @@ namespace DeleteStuff.UnitTests.Core.Commands.Config.List.Stages {
 
     [Test]
     public void TestExecuteWithEmptyConfigEchosNothing() {
-      mContext.ExecutionConfiguration.PathSpecifications = CM<PathSpecification>(0);
+      mContext.ExecutionConfiguration.PathSpecifications = CM<PathSpecificationDTO>(0);
       mStage.Execute(mContext, null);
     }
 
     [Test]
     public void TestExecuteWithSingleSpecEchos() {
-      mContext.ExecutionConfiguration.PathSpecifications = CM<PathSpecification>(1);
+      mContext.ExecutionConfiguration.PathSpecifications = CM<PathSpecificationDTO>(1);
       mObserver.Setup(o => o.OnInfo(mContext.ExecutionConfiguration.PathSpecifications[0].Name));
       mObserver.Setup(o => o.OnInfo("   " + mContext.ExecutionConfiguration.PathSpecifications[0].Includes[0]));
       mObserver.Setup(o => o.OnInfo("   " + mContext.ExecutionConfiguration.PathSpecifications[0].Includes[1]));

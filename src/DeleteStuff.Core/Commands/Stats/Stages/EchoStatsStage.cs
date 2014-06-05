@@ -14,7 +14,7 @@ namespace DeleteStuff.Core.Commands.Stats.Stages {
       Echo("total");
     }
 
-    private void EchoSpec(PathSpecification specification) {
+    private void EchoSpec(PathSpecificationDTO specification) {
       Echo(specification.Name);
     }
 

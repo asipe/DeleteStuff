@@ -11,13 +11,13 @@ namespace DeleteStuff.Core.Model.ConfigurationRepository.LoadPathSpecsOperation.
       context.PathSpecifications = FilterSpecs(context.Configuration.PathSpecifications, context.Names);
     }
 
-    private static PathSpecification[] FilterSpecs(IEnumerable<PathSpecification> availableSpecs, IEnumerable<string> names) {
+    private static PathSpecificationDTO[] FilterSpecs(IEnumerable<PathSpecificationDTO> availableSpecs, IEnumerable<string> names) {
       return names
         .Select(name => FindSpec(availableSpecs, name))
         .ToArray();
     }
 
-    private static PathSpecification FindSpec(IEnumerable<PathSpecification> availableSpecs, string name) {
+    private static PathSpecificationDTO FindSpec(IEnumerable<PathSpecificationDTO> availableSpecs, string name) {
       var spec = availableSpecs.FirstOrDefault(s => s.Name == name);
       if (spec == null)
         throw new DeleteStuffException("Unknown Spec: {0}", name);

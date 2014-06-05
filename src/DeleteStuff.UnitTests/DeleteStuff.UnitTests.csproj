@@ -72,8 +72,8 @@
     <Compile Include="Core\Commands\Stats\Stages\ExtractNamesStageTest.cs" />
     <Compile Include="Core\Commands\Stats\Stages\LoadSpecsStageTest.cs" />
     <Compile Include="Core\Commands\Stats\Stages\ValidateNamesStageTest.cs" />
-    <Compile Include="Core\External\ExecutionConfigurationTest.cs" />
-    <Compile Include="Core\External\PathSpecificationTest.cs" />
+    <Compile Include="Core\External\ExecutionConfigurationDTOTest.cs" />
+    <Compile Include="Core\External\PathSpecificationDTOTest.cs" />
     <Compile Include="Core\Model\ConfigurationRepository\LoadOperation\OperationTest.cs" />
     <Compile Include="Core\Model\ConfigurationRepository\LoadOperation\ContextTest.cs" />
     <Compile Include="Core\Model\ConfigurationRepository\LoadOperation\Stages\DeserializeConfigurationStageTest.cs" />

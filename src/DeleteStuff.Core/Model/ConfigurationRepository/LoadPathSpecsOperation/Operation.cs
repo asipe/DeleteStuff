@@ -7,7 +7,7 @@ namespace DeleteStuff.Core.Model.ConfigurationRepository.LoadPathSpecsOperation 
       mPipeline = pipeline;
     }
 
-    public PathSpecification[] Load(params string[] names) {
+    public PathSpecificationDTO[] Load(params string[] names) {
       var context = new Context(names);
       mPipeline.Execute(context);
       return context.PathSpecifications;

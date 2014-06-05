@@ -15,7 +15,7 @@ namespace DeleteStuff.UnitTests.Core.Commands.Config.List.Stages {
 
     [Test]
     public void TestExecuteLoadsExecutionConfiguration() {
-      var cfg = CA<ExecutionConfiguration>();
+      var cfg = CA<ExecutionConfigurationDTO>();
       mOperation.Setup(o => o.Load()).Returns(cfg);
       mStage.Execute(mContext, null);
       Assert.That(mContext.ExecutionConfiguration, Is.EqualTo(cfg));

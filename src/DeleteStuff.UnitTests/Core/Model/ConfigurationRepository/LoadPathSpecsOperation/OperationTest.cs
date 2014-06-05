@@ -9,7 +9,7 @@ namespace DeleteStuff.UnitTests.Core.Model.ConfigurationRepository.LoadPathSpecs
   public class OperationTest : BaseTestCase {
     [Test]
     public void TestExecuteDelegatesToPipeline() {
-      var specs = CM<PathSpecification>(0);
+      var specs = CM<PathSpecificationDTO>(0);
       mPipeline
         .Setup(p => p.Execute(Arg.Is(new Context("A", "B"))))
         .Callback<Context>(c => c.PathSpecifications = specs);

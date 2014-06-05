@@ -23,7 +23,7 @@ namespace DeleteStuff.IntegrationTests.Infrastructure {
         File.Delete(PathInfo.JsonConfigPath);
     }
 
-    public void WriteJsonConfig(ExecutionConfiguration configuration) {
+    public void WriteJsonConfig(ExecutionConfigurationDTO configuration) {
       WriteJsonConfig(JsonConvert.SerializeObject(configuration));
     }
 

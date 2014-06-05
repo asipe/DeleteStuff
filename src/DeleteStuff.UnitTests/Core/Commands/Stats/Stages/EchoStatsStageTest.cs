@@ -15,7 +15,7 @@ namespace DeleteStuff.UnitTests.Core.Commands.Stats.Stages {
 
     [Test]
     public void TestExecuteWithNoSpecsEchosTotal() {
-      mContext.PathSpecifications = CM<PathSpecification>(0);
+      mContext.PathSpecifications = CM<PathSpecificationDTO>(0);
       mObserver.Setup(o => o.OnInfo("total"));
       mObserver.Setup(o => o.OnInfo("   0 files"));
       mObserver.Setup(o => o.OnInfo("   0 bytes"));
@@ -25,7 +25,7 @@ namespace DeleteStuff.UnitTests.Core.Commands.Stats.Stages {
 
     [Test]
     public void TestExecuteWithSingleSpecEchos() {
-      mContext.PathSpecifications = CM<PathSpecification>(1);
+      mContext.PathSpecifications = CM<PathSpecificationDTO>(1);
       mObserver.Setup(o => o.OnInfo(mContext.PathSpecifications[0].Name));
       mObserver.Setup(o => o.OnInfo("   0 files"));
       mObserver.Setup(o => o.OnInfo("   0 bytes"));

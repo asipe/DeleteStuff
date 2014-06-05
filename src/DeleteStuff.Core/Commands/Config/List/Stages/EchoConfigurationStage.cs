@@ -13,7 +13,7 @@ namespace DeleteStuff.Core.Commands.Config.List.Stages {
       Array.ForEach(context.ExecutionConfiguration.PathSpecifications, EchoSpec);
     }
 
-    private void EchoSpec(PathSpecification specification) {
+    private void EchoSpec(PathSpecificationDTO specification) {
       mObserver.OnInfo(specification.Name);
       Array.ForEach(specification.Includes, EchoEntry);
       mObserver.OnInfo("");
