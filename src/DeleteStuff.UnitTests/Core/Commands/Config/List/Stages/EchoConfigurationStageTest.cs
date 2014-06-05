@@ -23,26 +23,26 @@ namespace DeleteStuff.UnitTests.Core.Commands.Config.List.Stages {
     public void TestExecuteWithSingleSpecEchos() {
       mContext.ExecutionConfig.Specs = CM<PathSpec>(1);
       mObserver.Setup(o => o.OnInfo(mContext.ExecutionConfig.Specs[0].Name));
-      mObserver.Setup(o => o.OnInfo("   " + mContext.ExecutionConfig.Specs[0].Entries[0]));
-      mObserver.Setup(o => o.OnInfo("   " + mContext.ExecutionConfig.Specs[0].Entries[1]));
-      mObserver.Setup(o => o.OnInfo("   " + mContext.ExecutionConfig.Specs[0].Entries[2]));
+      mObserver.Setup(o => o.OnInfo("   " + mContext.ExecutionConfig.Specs[0].Include[0]));
+      mObserver.Setup(o => o.OnInfo("   " + mContext.ExecutionConfig.Specs[0].Include[1]));
+      mObserver.Setup(o => o.OnInfo("   " + mContext.ExecutionConfig.Specs[0].Include[2]));
       mObserver.Setup(o => o.OnInfo(""));
       mStage.Execute(mContext, null);
     }
 
     [Test]
     public void TestExecuteWithMultipleSpecsEchos() {
-      mContext.ExecutionConfig.Specs[0].Entries = CM<string>(0);
-      mContext.ExecutionConfig.Specs[1].Entries = CM<string>(1);
+      mContext.ExecutionConfig.Specs[0].Include = CM<string>(0);
+      mContext.ExecutionConfig.Specs[1].Include = CM<string>(1);
       mObserver.Setup(o => o.OnInfo(mContext.ExecutionConfig.Specs[0].Name));
       mObserver.Setup(o => o.OnInfo(""));
       mObserver.Setup(o => o.OnInfo(mContext.ExecutionConfig.Specs[1].Name));
-      mObserver.Setup(o => o.OnInfo("   " + mContext.ExecutionConfig.Specs[1].Entries[0]));
+      mObserver.Setup(o => o.OnInfo("   " + mContext.ExecutionConfig.Specs[1].Include[0]));
       mObserver.Setup(o => o.OnInfo(""));
       mObserver.Setup(o => o.OnInfo(mContext.ExecutionConfig.Specs[2].Name));
-      mObserver.Setup(o => o.OnInfo("   " + mContext.ExecutionConfig.Specs[2].Entries[0]));
-      mObserver.Setup(o => o.OnInfo("   " + mContext.ExecutionConfig.Specs[2].Entries[1]));
-      mObserver.Setup(o => o.OnInfo("   " + mContext.ExecutionConfig.Specs[2].Entries[2]));
+      mObserver.Setup(o => o.OnInfo("   " + mContext.ExecutionConfig.Specs[2].Include[0]));
+      mObserver.Setup(o => o.OnInfo("   " + mContext.ExecutionConfig.Specs[2].Include[1]));
+      mObserver.Setup(o => o.OnInfo("   " + mContext.ExecutionConfig.Specs[2].Include[2]));
       mObserver.Setup(o => o.OnInfo(""));
       mStage.Execute(mContext, null);
     }

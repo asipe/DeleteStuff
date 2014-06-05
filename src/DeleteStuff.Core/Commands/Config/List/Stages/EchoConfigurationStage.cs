@@ -15,7 +15,7 @@ namespace DeleteStuff.Core.Commands.Config.List.Stages {
 
     private void EchoSpec(PathSpec spec) {
       mObserver.OnInfo(spec.Name);
-      Array.ForEach(spec.Entries, EchoEntry);
+      Array.ForEach(spec.Include, EchoEntry);
       mObserver.OnInfo("");
     }
 

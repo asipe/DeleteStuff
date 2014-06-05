@@ -71,22 +71,22 @@ namespace DeleteStuff.IntegrationTests {
                                                    Specs = new[] {
                                                                    new PathSpec {
                                                                                   Name = "project0",
-                                                                                  Entries = new string[0]
+                                                                                  Include = new string[0]
                                                                                 },
                                                                    new PathSpec {
                                                                                   Name = "project1",
-                                                                                  Entries = new[] {@"c:\project1\bin\*.exe"}
+                                                                                  Include = new[] {@"c:\project1\bin\*.exe"}
                                                                                 },
                                                                    new PathSpec {
                                                                                   Name = "project2",
-                                                                                  Entries = new[] {
+                                                                                  Include = new[] {
                                                                                                     @"c:\project2\bin\*.exe",
                                                                                                     @"c:\project2\obj\*.dll"
                                                                                                   }
                                                                                 },
                                                                    new PathSpec {
                                                                                   Name = "project3",
-                                                                                  Entries = new[] {
+                                                                                  Include = new[] {
                                                                                                     @"c:\project3\bin\*.exe",
                                                                                                     @"c:\project3\obj\*.dll",
                                                                                                     @"c:\project3\app_data\**\*.*"
@@ -138,7 +138,7 @@ namespace DeleteStuff.IntegrationTests {
                                                    Specs = new[] {
                                                                    new PathSpec {
                                                                                   Name = "project0",
-                                                                                  Entries = new[] {
+                                                                                  Include = new[] {
                                                                                                     Helper.DataDirectory.GetDirectory("proj0")
                                                                                                   }
                                                                                 }
@@ -164,13 +164,13 @@ namespace DeleteStuff.IntegrationTests {
                                                    Specs = new[] {
                                                                    new PathSpec {
                                                                                   Name = "project0",
-                                                                                  Entries = new[] {
+                                                                                  Include = new[] {
                                                                                                     Helper.DataDirectory.GetDirectory("proj0")
                                                                                                   }
                                                                                 },
                                                                    new PathSpec {
                                                                                   Name = "project1",
-                                                                                  Entries = new[] {
+                                                                                  Include = new[] {
                                                                                                     Helper.DataDirectory.GetDirectory("proj1")
                                                                                                   }
                                                                                 }
