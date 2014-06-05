@@ -7,7 +7,7 @@ namespace DeleteStuff.UnitTests.Core.Commands.Config.List {
     [Test]
     public void TestDefaults() {
       var context = new Context();
-      Assert.That(context.ExecutionConfig, Is.Null);
+      Assert.That(context.ExecutionConfiguration, Is.Null);
     }
   }
 }

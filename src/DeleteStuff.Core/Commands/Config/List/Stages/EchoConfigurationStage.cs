@@ -10,7 +10,7 @@ namespace DeleteStuff.Core.Commands.Config.List.Stages {
     }
 
     protected override void DoExecute(Context context) {
-      Array.ForEach(context.ExecutionConfig.PathSpecifications, EchoSpec);
+      Array.ForEach(context.ExecutionConfiguration.PathSpecifications, EchoSpec);
     }
 
     private void EchoSpec(PathSpecification specification) {

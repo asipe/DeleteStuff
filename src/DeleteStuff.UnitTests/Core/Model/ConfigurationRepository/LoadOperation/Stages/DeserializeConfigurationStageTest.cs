@@ -17,16 +17,16 @@ namespace DeleteStuff.UnitTests.Core.Model.ConfigurationRepository.LoadOperation
 
     [Test]
     public void TestExecuteDeserializesConfigurationJson() {
-      var config = CA<ExecutionConfig>();
-      mSerializer.Setup(s => s.Deserialize<ExecutionConfig>(mContext.ConfigurationJson)).Returns(config);
+      var config = CA<ExecutionConfiguration>();
+      mSerializer.Setup(s => s.Deserialize<ExecutionConfiguration>(mContext.ConfigurationJson)).Returns(config);
       mStage.Execute(mContext, null);
-      Assert.That(mContext.ExecutionConfig, Is.EqualTo(config));
+      Assert.That(mContext.ExecutionConfiguration, Is.EqualTo(config));
     }
 
     [Test]
     public void TestDeserializeThrowsCapturesAndRethrows() {
       var exception = new Exception("test message");
-      mSerializer.Setup(s => s.Deserialize<ExecutionConfig>(mContext.ConfigurationJson)).Throws(exception);
+      mSerializer.Setup(s => s.Deserialize<ExecutionConfiguration>(mContext.ConfigurationJson)).Throws(exception);
       var ex = Assert.Throws<DeleteStuffException>(() => mStage.Execute(mContext, null));
       Assert.That(ex.InnerException, Is.EqualTo(exception));
       Assert.That(ex.Message, Is.EqualTo("deletestuff.json does not contain valid json: test message"));
@@ -37,7 +37,7 @@ namespace DeleteStuff.UnitTests.Core.Model.ConfigurationRepository.LoadOperation
       mSerializer = Mok<ISerializer>();
       mStage = new DeserializeConfigurationStage(33, mSerializer.Object);
       mContext = CA<Context>();
-      mContext.ExecutionConfig = null;
+      mContext.ExecutionConfiguration = null;
     }
 
     private Mock<ISerializer> mSerializer;

@@ -15,7 +15,7 @@ namespace DeleteStuff.UnitTests.Core.Model.ConfigurationRepository.LoadPathSpecs
 
     [Test]
     public void TestExecuteLoadsConfiguration() {
-      var cfg = CA<ExecutionConfig>();
+      var cfg = CA<ExecutionConfiguration>();
       mLoadOperation.Setup(o => o.Load()).Returns(cfg);
       mStage.Execute(mContext, null);
       AssertAreEqual(mContext.Configuration, cfg);

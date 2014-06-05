@@ -7,10 +7,10 @@ namespace DeleteStuff.Core.Model.ConfigurationRepository.LoadOperation {
       mPipeline = pipeline;
     }
 
-    public ExecutionConfig Load() {
+    public ExecutionConfiguration Load() {
       var context = new Context();
       mPipeline.Execute(context);
-      return context.ExecutionConfig;
+      return context.ExecutionConfiguration;
     }
 
     private readonly IPipeline<Context> mPipeline;

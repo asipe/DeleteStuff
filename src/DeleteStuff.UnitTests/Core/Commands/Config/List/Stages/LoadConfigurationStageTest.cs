@@ -15,10 +15,10 @@ namespace DeleteStuff.UnitTests.Core.Commands.Config.List.Stages {
 
     [Test]
     public void TestExecuteLoadsExecutionConfiguration() {
-      var cfg = CA<ExecutionConfig>();
+      var cfg = CA<ExecutionConfiguration>();
       mOperation.Setup(o => o.Load()).Returns(cfg);
       mStage.Execute(mContext, null);
-      Assert.That(mContext.ExecutionConfig, Is.EqualTo(cfg));
+      Assert.That(mContext.ExecutionConfiguration, Is.EqualTo(cfg));
     }
 
     [SetUp]
@@ -26,7 +26,7 @@ namespace DeleteStuff.UnitTests.Core.Commands.Config.List.Stages {
       mOperation = Mok<ILoadOperation>();
       mStage = new LoadConfigurationStage(33, mOperation.Object);
       mContext = CA<Context>();
-      mContext.ExecutionConfig = null;
+      mContext.ExecutionConfiguration = null;
     }
 
     private Mock<ILoadOperation> mOperation;

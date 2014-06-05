@@ -9,10 +9,10 @@ namespace DeleteStuff.UnitTests.Core.Model.ConfigurationRepository.LoadOperation
   public class OperationTest : BaseTestCase {
     [Test]
     public void TestExecuteDelegatesToPipeline() {
-      var cfg = CA<ExecutionConfig>();
+      var cfg = CA<ExecutionConfiguration>();
       mPipeline
         .Setup(p => p.Execute(Arg.Is(new Context())))
-        .Callback<Context>(c => c.ExecutionConfig = cfg);
+        .Callback<Context>(c => c.ExecutionConfiguration = cfg);
       Assert.That(mOperation.Load(), Is.EqualTo(cfg));
     }
 

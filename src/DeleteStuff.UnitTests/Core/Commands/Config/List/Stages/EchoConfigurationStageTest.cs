@@ -15,34 +15,34 @@ namespace DeleteStuff.UnitTests.Core.Commands.Config.List.Stages {
 
     [Test]
     public void TestExecuteWithEmptyConfigEchosNothing() {
-      mContext.ExecutionConfig.PathSpecifications = CM<PathSpecification>(0);
+      mContext.ExecutionConfiguration.PathSpecifications = CM<PathSpecification>(0);
       mStage.Execute(mContext, null);
     }
 
     [Test]
     public void TestExecuteWithSingleSpecEchos() {
-      mContext.ExecutionConfig.PathSpecifications = CM<PathSpecification>(1);
-      mObserver.Setup(o => o.OnInfo(mContext.ExecutionConfig.PathSpecifications[0].Name));
-      mObserver.Setup(o => o.OnInfo("   " + mContext.ExecutionConfig.PathSpecifications[0].Includes[0]));
-      mObserver.Setup(o => o.OnInfo("   " + mContext.ExecutionConfig.PathSpecifications[0].Includes[1]));
-      mObserver.Setup(o => o.OnInfo("   " + mContext.ExecutionConfig.PathSpecifications[0].Includes[2]));
+      mContext.ExecutionConfiguration.PathSpecifications = CM<PathSpecification>(1);
+      mObserver.Setup(o => o.OnInfo(mContext.ExecutionConfiguration.PathSpecifications[0].Name));
+      mObserver.Setup(o => o.OnInfo("   " + mContext.ExecutionConfiguration.PathSpecifications[0].Includes[0]));
+      mObserver.Setup(o => o.OnInfo("   " + mContext.ExecutionConfiguration.PathSpecifications[0].Includes[1]));
+      mObserver.Setup(o => o.OnInfo("   " + mContext.ExecutionConfiguration.PathSpecifications[0].Includes[2]));
       mObserver.Setup(o => o.OnInfo(""));
       mStage.Execute(mContext, null);
     }
 
     [Test]
     public void TestExecuteWithMultipleSpecsEchos() {
-      mContext.ExecutionConfig.PathSpecifications[0].Includes = CM<string>(0);
-      mContext.ExecutionConfig.PathSpecifications[1].Includes = CM<string>(1);
-      mObserver.Setup(o => o.OnInfo(mContext.ExecutionConfig.PathSpecifications[0].Name));
+      mContext.ExecutionConfiguration.PathSpecifications[0].Includes = CM<string>(0);
+      mContext.ExecutionConfiguration.PathSpecifications[1].Includes = CM<string>(1);
+      mObserver.Setup(o => o.OnInfo(mContext.ExecutionConfiguration.PathSpecifications[0].Name));
       mObserver.Setup(o => o.OnInfo(""));
-      mObserver.Setup(o => o.OnInfo(mContext.ExecutionConfig.PathSpecifications[1].Name));
-      mObserver.Setup(o => o.OnInfo("   " + mContext.ExecutionConfig.PathSpecifications[1].Includes[0]));
+      mObserver.Setup(o => o.OnInfo(mContext.ExecutionConfiguration.PathSpecifications[1].Name));
+      mObserver.Setup(o => o.OnInfo("   " + mContext.ExecutionConfiguration.PathSpecifications[1].Includes[0]));
       mObserver.Setup(o => o.OnInfo(""));
-      mObserver.Setup(o => o.OnInfo(mContext.ExecutionConfig.PathSpecifications[2].Name));
-      mObserver.Setup(o => o.OnInfo("   " + mContext.ExecutionConfig.PathSpecifications[2].Includes[0]));
-      mObserver.Setup(o => o.OnInfo("   " + mContext.ExecutionConfig.PathSpecifications[2].Includes[1]));
-      mObserver.Setup(o => o.OnInfo("   " + mContext.ExecutionConfig.PathSpecifications[2].Includes[2]));
+      mObserver.Setup(o => o.OnInfo(mContext.ExecutionConfiguration.PathSpecifications[2].Name));
+      mObserver.Setup(o => o.OnInfo("   " + mContext.ExecutionConfiguration.PathSpecifications[2].Includes[0]));
+      mObserver.Setup(o => o.OnInfo("   " + mContext.ExecutionConfiguration.PathSpecifications[2].Includes[1]));
+      mObserver.Setup(o => o.OnInfo("   " + mContext.ExecutionConfiguration.PathSpecifications[2].Includes[2]));
       mObserver.Setup(o => o.OnInfo(""));
       mStage.Execute(mContext, null);
     }

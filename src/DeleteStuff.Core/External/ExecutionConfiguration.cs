@@ -1,5 +1,5 @@
 ﻿namespace DeleteStuff.Core.External {
-  public class ExecutionConfig {
+  public class ExecutionConfiguration {
     public PathSpecification[] PathSpecifications{get;set;}
   }
 }

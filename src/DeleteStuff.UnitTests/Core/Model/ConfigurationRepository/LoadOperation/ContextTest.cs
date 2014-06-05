@@ -8,7 +8,7 @@ namespace DeleteStuff.UnitTests.Core.Model.ConfigurationRepository.LoadOperation
     public void TestDefaults() {
       var context = new Context();
       Assert.That(context.ConfigurationJson, Is.Null);
-      Assert.That(context.ExecutionConfig, Is.Null);
+      Assert.That(context.ExecutionConfiguration, Is.Null);
     }
   }
 }

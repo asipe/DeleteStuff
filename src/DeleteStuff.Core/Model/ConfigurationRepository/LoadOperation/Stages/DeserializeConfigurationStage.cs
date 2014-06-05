@@ -11,7 +11,7 @@ namespace DeleteStuff.Core.Model.ConfigurationRepository.LoadOperation.Stages {
 
     protected override void DoExecute(Context context) {
       try {
-        context.ExecutionConfig = mSerializer.Deserialize<ExecutionConfig>(context.ConfigurationJson);
+        context.ExecutionConfiguration = mSerializer.Deserialize<ExecutionConfiguration>(context.ConfigurationJson);
       } catch (Exception e) {
         throw new DeleteStuffException(string.Format("deletestuff.json does not contain valid json: {0}", e.Message), e);
       }

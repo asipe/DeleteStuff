@@ -8,7 +8,7 @@ namespace DeleteStuff.Core.Commands.Config.List.Stages {
     }
 
     protected override void DoExecute(Context context) {
-      context.ExecutionConfig = mOperation.Load();
+      context.ExecutionConfiguration = mOperation.Load();
     }
 
     private readonly ILoadOperation mOperation;

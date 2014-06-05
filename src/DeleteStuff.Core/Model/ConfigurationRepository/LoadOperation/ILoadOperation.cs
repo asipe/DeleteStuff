@@ -2,6 +2,6 @@
 
 namespace DeleteStuff.Core.Model.ConfigurationRepository.LoadOperation {
   public interface ILoadOperation {
-    ExecutionConfig Load();
+    ExecutionConfiguration Load();
   }
 }

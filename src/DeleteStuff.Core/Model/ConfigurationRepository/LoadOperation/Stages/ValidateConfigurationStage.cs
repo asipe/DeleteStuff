@@ -5,8 +5,8 @@ namespace DeleteStuff.Core.Model.ConfigurationRepository.LoadOperation.Stages {
     public ValidateConfigurationStage(int priority) : base(priority) {}
 
     protected override void DoExecute(Context context) {
-      Validate(context.ExecutionConfig, "configuration is null");
-      Validate(context.ExecutionConfig.PathSpecifications, "specs are null");
+      Validate(context.ExecutionConfiguration, "configuration is null");
+      Validate(context.ExecutionConfiguration.PathSpecifications, "specs are null");
     }
 
     private static void Validate(object obj, string msg) {
