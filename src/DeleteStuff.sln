@@ -22,6 +22,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeleteStuff.UnitTests", "De
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeleteStuff.IntegrationTests", "DeleteStuff.IntegrationTests\DeleteStuff.IntegrationTests.csproj", "{D05B7FD0-D79E-451A-902C-517D7CE56D27}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DeleteStuff.Nuget.Packages (net-4.5)", "DeleteStuff.Nuget.Packages (net-4.5)", "{C8A5FB82-0F2E-452E-9F59-876C53E39DD2}"
+	ProjectSection(SolutionItems) = preProject
+		DeleteStuff.Nuget.Packages\net-4.5\packages.config = DeleteStuff.Nuget.Packages\net-4.5\packages.config
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
