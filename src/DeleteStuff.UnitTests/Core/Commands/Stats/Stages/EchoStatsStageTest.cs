@@ -20,7 +20,7 @@ namespace DeleteStuff.UnitTests.Core.Commands.Stats.Stages {
       mObserver.Setup(o => o.OnInfo("   0 files"));
       mObserver.Setup(o => o.OnInfo("   0 bytes"));
       mObserver.Setup(o => o.OnInfo(""));
-      mStage.Execute(mContext, null);
+      mStage.Execute(mContext);
     }
 
     [Test]
@@ -34,7 +34,7 @@ namespace DeleteStuff.UnitTests.Core.Commands.Stats.Stages {
       mObserver.Setup(o => o.OnInfo("   0 files"));
       mObserver.Setup(o => o.OnInfo("   0 bytes"));
       mObserver.Setup(o => o.OnInfo(""));
-      mStage.Execute(mContext, null);
+      mStage.Execute(mContext);
     }
 
     [Test]
@@ -55,7 +55,7 @@ namespace DeleteStuff.UnitTests.Core.Commands.Stats.Stages {
       mObserver.Setup(o => o.OnInfo("   0 files"));
       mObserver.Setup(o => o.OnInfo("   0 bytes"));
       mObserver.Setup(o => o.OnInfo(""));
-      mStage.Execute(mContext, null);
+      mStage.Execute(mContext);
     }
 
     [SetUp]

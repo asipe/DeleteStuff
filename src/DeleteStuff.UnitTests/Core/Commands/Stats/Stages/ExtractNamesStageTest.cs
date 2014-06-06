@@ -16,7 +16,7 @@ namespace DeleteStuff.UnitTests.Core.Commands.Stats.Stages {
     [TestCase(new[] {"stats", "name0", "name1", "name2"}, new[] {"name0", "name1", "name2"})]
     public void TestExecuteExtractNamesFromArgs(string[] args, string[] expectedNames) {
       mContext.Args = args;
-      mStage.Execute(mContext, null);
+      mStage.Execute(mContext);
       Assert.That(mContext.Names, Is.EqualTo(expectedNames));
     }
 

@@ -15,7 +15,7 @@ namespace DeleteStuff.UnitTests.Core.Model.ConfigurationRepository.LoadOperation
     [Test]
     public void TestExecuteLoadsConfigurationFile() {
       mFile.Setup(f => f.ReadAllText("deletestuff.json")).Returns("json");
-      mStage.Execute(mContext, null);
+      mStage.Execute(mContext);
       Assert.That(mContext.ConfigurationJson, Is.EqualTo("json"));
     }
 

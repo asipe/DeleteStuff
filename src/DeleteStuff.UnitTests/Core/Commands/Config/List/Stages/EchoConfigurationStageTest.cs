@@ -16,7 +16,7 @@ namespace DeleteStuff.UnitTests.Core.Commands.Config.List.Stages {
     [Test]
     public void TestExecuteWithEmptyConfigEchosNothing() {
       mContext.ExecutionConfiguration.PathSpecifications = CM<PathSpecificationDTO>(0);
-      mStage.Execute(mContext, null);
+      mStage.Execute(mContext);
     }
 
     [Test]
@@ -27,7 +27,7 @@ namespace DeleteStuff.UnitTests.Core.Commands.Config.List.Stages {
       mObserver.Setup(o => o.OnInfo("   " + mContext.ExecutionConfiguration.PathSpecifications[0].Includes[1]));
       mObserver.Setup(o => o.OnInfo("   " + mContext.ExecutionConfiguration.PathSpecifications[0].Includes[2]));
       mObserver.Setup(o => o.OnInfo(""));
-      mStage.Execute(mContext, null);
+      mStage.Execute(mContext);
     }
 
     [Test]
@@ -44,7 +44,7 @@ namespace DeleteStuff.UnitTests.Core.Commands.Config.List.Stages {
       mObserver.Setup(o => o.OnInfo("   " + mContext.ExecutionConfiguration.PathSpecifications[2].Includes[1]));
       mObserver.Setup(o => o.OnInfo("   " + mContext.ExecutionConfiguration.PathSpecifications[2].Includes[2]));
       mObserver.Setup(o => o.OnInfo(""));
-      mStage.Execute(mContext, null);
+      mStage.Execute(mContext);
     }
 
     [SetUp]

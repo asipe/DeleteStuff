@@ -13,13 +13,13 @@ namespace DeleteStuff.UnitTests.Core.Commands.Stats.Stages {
 
     [Test]
     public void TestExecuteWithMoreThanASingleNameDoesNotThrow() {
-      mStage.Execute(mContext, null);
+      mStage.Execute(mContext);
     }
 
     [Test]
     public void TestExecuteWithNoNamesThrows() {
       mContext.Names = BA<string>();
-      var ex = Assert.Throws<DeleteStuffException>(() => mStage.Execute(mContext, null));
+      var ex = Assert.Throws<DeleteStuffException>(() => mStage.Execute(mContext));
       Assert.That(ex.Message, Is.EqualTo("Missing Spec"));
     }
 

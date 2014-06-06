@@ -19,7 +19,7 @@ namespace DeleteStuff.UnitTests.Core.Model.ConfigurationRepository.LoadOperation
     public void TestExecuteDeserializesConfigurationJson() {
       var config = CA<ExecutionConfigurationDTO>();
       mSerializer.Setup(s => s.Deserialize<ExecutionConfigurationDTO>(mContext.ConfigurationJson)).Returns(config);
-      mStage.Execute(mContext, null);
+      mStage.Execute(mContext);
       Assert.That(mContext.ExecutionConfiguration, Is.EqualTo(config));
     }
 
@@ -27,7 +27,7 @@ namespace DeleteStuff.UnitTests.Core.Model.ConfigurationRepository.LoadOperation
     public void TestDeserializeThrowsCapturesAndRethrows() {
       var exception = new Exception("test message");
       mSerializer.Setup(s => s.Deserialize<ExecutionConfigurationDTO>(mContext.ConfigurationJson)).Throws(exception);
-      var ex = Assert.Throws<DeleteStuffException>(() => mStage.Execute(mContext, null));
+      var ex = Assert.Throws<DeleteStuffException>(() => mStage.Execute(mContext));
       Assert.That(ex.InnerException, Is.EqualTo(exception));
       Assert.That(ex.Message, Is.EqualTo("deletestuff.json does not contain valid json: test message"));
     }

@@ -14,7 +14,7 @@ namespace DeleteStuff.UnitTests.Core.Model.ConfigurationRepository.LoadPathSpecs
     [Test]
     public void TestExecuteWithNoSpecNamesSetsSpecsToEmpty() {
       mContext.Names = CM<string>(0);
-      mStage.Execute(mContext, null);
+      mStage.Execute(mContext);
       Assert.That(mContext.PathSpecifications, Is.Empty);
     }
 
@@ -22,7 +22,7 @@ namespace DeleteStuff.UnitTests.Core.Model.ConfigurationRepository.LoadPathSpecs
     public void TestExecuteWithSingleSpecNameThatIsAvailableSetsSpecs() {
       mContext.Names = CM<string>(1);
       mContext.Configuration.PathSpecifications[0].Name = mContext.Names[0];
-      mStage.Execute(mContext, null);
+      mStage.Execute(mContext);
       AssertAreEqual(mContext.PathSpecifications, BA(mContext.Configuration.PathSpecifications[0]));
     }
 
@@ -31,14 +31,14 @@ namespace DeleteStuff.UnitTests.Core.Model.ConfigurationRepository.LoadPathSpecs
       mContext.Configuration.PathSpecifications[0].Name = mContext.Names[0];
       mContext.Configuration.PathSpecifications[1].Name = mContext.Names[1];
       mContext.Configuration.PathSpecifications[2].Name = mContext.Names[2];
-      mStage.Execute(mContext, null);
+      mStage.Execute(mContext);
       AssertAreEqual(mContext.PathSpecifications, mContext.Configuration.PathSpecifications);
     }
 
     [Test]
     public void TestExecuteWithSpecNameThatIsNotFoundThrows() {
       mContext.Names[0] = "project0";
-      var ex = Assert.Throws<DeleteStuffException>(() => mStage.Execute(mContext, null));
+      var ex = Assert.Throws<DeleteStuffException>(() => mStage.Execute(mContext));
       Assert.That(ex.Message, Is.EqualTo("Unknown Spec: project0"));
     }
 

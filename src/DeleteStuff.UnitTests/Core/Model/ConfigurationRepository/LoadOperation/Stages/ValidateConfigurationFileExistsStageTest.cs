@@ -16,13 +16,13 @@ namespace DeleteStuff.UnitTests.Core.Model.ConfigurationRepository.LoadOperation
     [Test]
     public void TestConfigurationFileExistsContinuesExecution() {
       mFile.Setup(f => f.Exists("deletestuff.json")).Returns(true);
-      mStage.Execute(mContext, null);
+      mStage.Execute(mContext);
     }
 
     [Test]
     public void TestConfigurationFileDoesNotExistThrows() {
       mFile.Setup(f => f.Exists("deletestuff.json")).Returns(false);
-      var ex = Assert.Throws<DeleteStuffException>(() => mStage.Execute(mContext, null));
+      var ex = Assert.Throws<DeleteStuffException>(() => mStage.Execute(mContext));
       Assert.That(ex.Message, Is.EqualTo("deletestuff.json could not be found"));
     }
 

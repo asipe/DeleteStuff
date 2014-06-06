@@ -17,7 +17,7 @@ namespace DeleteStuff.UnitTests.Core.Commands.Stats.Stages {
     public void TestExecuteLoadsSpecsUsingOperation() {
       var specs = CM<PathSpecificationDTO>(1);
       mOperation.Setup(o => o.Load(mContext.Names)).Returns(specs);
-      mStage.Execute(mContext, null);
+      mStage.Execute(mContext);
       Assert.That(mContext.PathSpecifications, Is.EqualTo(specs));
     }
 
