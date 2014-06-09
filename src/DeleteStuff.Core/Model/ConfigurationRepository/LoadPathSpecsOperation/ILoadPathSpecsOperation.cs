@@ -1,7 +1,5 @@
-﻿using DeleteStuff.Core.External;
-
-namespace DeleteStuff.Core.Model.ConfigurationRepository.LoadPathSpecsOperation {
+﻿namespace DeleteStuff.Core.Model.ConfigurationRepository.LoadPathSpecsOperation {
   public interface ILoadPathSpecsOperation {
-    PathSpecificationDTO[] Load(params string[] names);
+    PathSpecification[] Load(params string[] names);
   }
 }

@@ -1,5 +1,5 @@
 ﻿using DeleteStuff.Core.Commands.Stats.Stages;
-using DeleteStuff.Core.External;
+using DeleteStuff.Core.Model;
 using DeleteStuff.Core.Model.ConfigurationRepository.LoadPathSpecsOperation;
 using Moq;
 using NUnit.Framework;
@@ -15,7 +15,7 @@ namespace DeleteStuff.UnitTests.Core.Commands.Stats.Stages {
 
     [Test]
     public void TestExecuteLoadsSpecsUsingOperation() {
-      var specs = CM<PathSpecificationDTO>(1);
+      var specs = CM<PathSpecification>(1);
       mOperation.Setup(o => o.Load(mContext.Names)).Returns(specs);
       mStage.Execute(mContext);
       Assert.That(mContext.PathSpecifications, Is.EqualTo(specs));

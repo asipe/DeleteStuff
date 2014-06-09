@@ -1,5 +1,5 @@
 ﻿using System;
-using DeleteStuff.Core.External;
+using DeleteStuff.Core.Model;
 using DeleteStuff.Core.Output;
 using SupaCharge.Core.Patterns;
 
@@ -13,7 +13,7 @@ namespace DeleteStuff.Core.Commands.Config.List.Stages {
       Array.ForEach(context.ExecutionConfiguration.PathSpecifications, EchoSpec);
     }
 
-    private void EchoSpec(PathSpecificationDTO specification) {
+    private void EchoSpec(PathSpecification specification) {
       mObserver.OnInfo(specification.Name);
       Array.ForEach(specification.Includes, EchoEntry);
       mObserver.OnInfo("");

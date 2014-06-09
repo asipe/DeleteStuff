@@ -1,6 +1,6 @@
 ﻿using DeleteStuff.Core.Commands.Stats;
 using DeleteStuff.Core.Commands.Stats.Stages;
-using DeleteStuff.Core.External;
+using DeleteStuff.Core.Model;
 using DeleteStuff.Core.Output;
 using Moq;
 using NUnit.Framework;
@@ -15,7 +15,7 @@ namespace DeleteStuff.UnitTests.Core.Commands.Stats.Stages {
 
     [Test]
     public void TestExecuteWithNoSpecsEchosTotal() {
-      mContext.PathSpecifications = CM<PathSpecificationDTO>(0);
+      mContext.PathSpecifications = CM<PathSpecification>(0);
       mObserver.Setup(o => o.OnInfo("total"));
       mObserver.Setup(o => o.OnInfo("   0 files"));
       mObserver.Setup(o => o.OnInfo("   0 bytes"));
@@ -25,7 +25,7 @@ namespace DeleteStuff.UnitTests.Core.Commands.Stats.Stages {
 
     [Test]
     public void TestExecuteWithSingleSpecEchos() {
-      mContext.PathSpecifications = CM<PathSpecificationDTO>(1);
+      mContext.PathSpecifications = CM<PathSpecification>(1);
       mObserver.Setup(o => o.OnInfo(mContext.PathSpecifications[0].Name));
       mObserver.Setup(o => o.OnInfo("   0 files"));
       mObserver.Setup(o => o.OnInfo("   0 bytes"));

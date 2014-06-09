@@ -20,7 +20,7 @@ namespace DeleteStuff.UnitTests.Core.Model.ConfigurationRepository.LoadOperation
       var config = CA<ExecutionConfigurationDTO>();
       mSerializer.Setup(s => s.Deserialize<ExecutionConfigurationDTO>(mContext.ConfigurationJson)).Returns(config);
       mStage.Execute(mContext);
-      Assert.That(mContext.ExecutionConfiguration, Is.EqualTo(config));
+      Assert.That(mContext.ExecutionConfigurationDTO, Is.EqualTo(config));
     }
 
     [Test]

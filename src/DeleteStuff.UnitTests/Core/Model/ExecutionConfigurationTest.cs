@@ -7,7 +7,7 @@ namespace DeleteStuff.UnitTests.Core.Model {
     [Test]
     public void TestDefaults() {
       var specs = CM<PathSpecification>(0);
-      var config  = new ExecutionConfiguration(specs);
+      var config = new ExecutionConfiguration(specs);
       Assert.That(config.PathSpecifications, Is.EqualTo(specs));
     }
   }

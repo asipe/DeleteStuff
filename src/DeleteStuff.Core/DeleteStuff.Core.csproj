@@ -70,6 +70,7 @@
     <Compile Include="Model\ConfigurationRepository\LoadOperation\Operation.cs" />
     <Compile Include="Model\ConfigurationRepository\LoadOperation\Context.cs" />
     <Compile Include="Model\ConfigurationRepository\LoadOperation\ILoadOperation.cs" />
+    <Compile Include="Model\ConfigurationRepository\LoadOperation\Stages\BuildConfigurationStage.cs" />
     <Compile Include="Model\ConfigurationRepository\LoadOperation\Stages\DeserializeConfigurationStage.cs" />
     <Compile Include="Model\ConfigurationRepository\LoadOperation\Stages\LoadConfigurationFileStage.cs" />
     <Compile Include="Model\ConfigurationRepository\LoadOperation\Stages\ValidateConfigurationFileExistsStage.cs" />
@@ -80,6 +81,8 @@
     <Compile Include="Model\ConfigurationRepository\LoadPathSpecsOperation\Stages\FilterSpecsStage.cs" />
     <Compile Include="Model\ConfigurationRepository\LoadPathSpecsOperation\Stages\LoadConfigurationStage.cs" />
     <Compile Include="Model\ExecutionConfiguration.cs" />
+    <Compile Include="Model\PathSpecificationBuilder\Builder.cs" />
+    <Compile Include="Model\PathSpecificationBuilder\IPathSpecificationBuilder.cs" />
     <Compile Include="Model\PathSpecification.cs" />
     <Compile Include="ObjectFactory\Factory.cs" />
     <Compile Include="ObjectFactory\IFactory.cs" />
@@ -93,6 +96,7 @@
     <Compile Include="ObjectFactory\Module\LoadOperationModule.cs" />
     <Compile Include="ObjectFactory\Module\LoadSpecsOperationModule.cs" />
     <Compile Include="ObjectFactory\Module\OutputModule.cs" />
+    <Compile Include="ObjectFactory\Module\PathSpecificationBuilderModule.cs" />
     <Compile Include="ObjectFactory\Module\PipelineModule.cs" />
     <Compile Include="ObjectFactory\Module\SerializerModule.cs" />
     <Compile Include="ObjectFactory\Module\StatsCommandModule.cs" />

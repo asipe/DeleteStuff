@@ -1,5 +1,5 @@
 ﻿using DeleteStuff.Core.Commands.Config.List.Stages;
-using DeleteStuff.Core.External;
+using DeleteStuff.Core.Model;
 using DeleteStuff.Core.Model.ConfigurationRepository.LoadOperation;
 using Moq;
 using NUnit.Framework;
@@ -15,7 +15,7 @@ namespace DeleteStuff.UnitTests.Core.Commands.Config.List.Stages {
 
     [Test]
     public void TestExecuteLoadsExecutionConfiguration() {
-      var cfg = CA<ExecutionConfigurationDTO>();
+      var cfg = CA<ExecutionConfiguration>();
       mOperation.Setup(o => o.Load()).Returns(cfg);
       mStage.Execute(mContext);
       Assert.That(mContext.ExecutionConfiguration, Is.EqualTo(cfg));

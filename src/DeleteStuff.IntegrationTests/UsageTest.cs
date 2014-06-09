@@ -66,7 +66,6 @@ namespace DeleteStuff.IntegrationTests {
     }
 
     [Test]
-    [Ignore("in progress")]
     public void TestListConfigurationWhenPathSpecs() {
       Helper.WriteJsonConfig(new ExecutionConfigurationDTO {
                                                              PathSpecifications = new[] {

@@ -1,4 +1,4 @@
-﻿using DeleteStuff.Core.External;
+﻿using DeleteStuff.Core.Model;
 using DeleteStuff.Core.Model.ConfigurationRepository.LoadOperation;
 using DeleteStuff.Core.Model.ConfigurationRepository.LoadPathSpecsOperation.Stages;
 using Moq;
@@ -15,10 +15,10 @@ namespace DeleteStuff.UnitTests.Core.Model.ConfigurationRepository.LoadPathSpecs
 
     [Test]
     public void TestExecuteLoadsConfiguration() {
-      var cfg = CA<ExecutionConfigurationDTO>();
+      var cfg = CA<ExecutionConfiguration>();
       mLoadOperation.Setup(o => o.Load()).Returns(cfg);
       mStage.Execute(mContext);
-      AssertAreEqual(mContext.Configuration, cfg);
+      AssertAreEqual(mContext.ExecutionConfiguration, cfg);
     }
 
     [SetUp]
@@ -26,7 +26,7 @@ namespace DeleteStuff.UnitTests.Core.Model.ConfigurationRepository.LoadPathSpecs
       mLoadOperation = Mok<ILoadOperation>();
       mStage = new LoadConfigurationStage(33, mLoadOperation.Object);
       mContext = CA<Context>();
-      mContext.Configuration = null;
+      mContext.ExecutionConfiguration = null;
     }
 
     private LoadConfigurationStage mStage;

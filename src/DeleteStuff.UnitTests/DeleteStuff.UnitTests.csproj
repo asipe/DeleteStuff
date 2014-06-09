@@ -76,6 +76,7 @@
     <Compile Include="Core\External\PathSpecificationDTOTest.cs" />
     <Compile Include="Core\Model\ConfigurationRepository\LoadOperation\OperationTest.cs" />
     <Compile Include="Core\Model\ConfigurationRepository\LoadOperation\ContextTest.cs" />
+    <Compile Include="Core\Model\ConfigurationRepository\LoadOperation\Stages\BuildConfigurationStageTest.cs" />
     <Compile Include="Core\Model\ConfigurationRepository\LoadOperation\Stages\DeserializeConfigurationStageTest.cs" />
     <Compile Include="Core\Model\ConfigurationRepository\LoadOperation\Stages\LoadConfigurationFileStageTest.cs" />
     <Compile Include="Core\Model\ConfigurationRepository\LoadOperation\Stages\ValidateConfigurationFileExistsStageTest.cs" />
@@ -85,6 +86,7 @@
     <Compile Include="Core\Model\ConfigurationRepository\LoadPathSpecsOperation\Stages\FilterspecsStage.cs" />
     <Compile Include="Core\Model\ConfigurationRepository\LoadPathSpecsOperation\Stages\LoadConfigurationStageTest.cs" />
     <Compile Include="Core\Model\ExecutionConfigurationTest.cs" />
+    <Compile Include="Core\Model\PathSpecificationBuilder\BuilderTest.cs" />
     <Compile Include="Core\Model\PathSpecificationTest.cs" />
     <Compile Include="Core\Utility\JsonSerializerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

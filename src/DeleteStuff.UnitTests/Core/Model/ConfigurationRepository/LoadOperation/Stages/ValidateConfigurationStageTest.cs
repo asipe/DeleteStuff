@@ -18,14 +18,14 @@ namespace DeleteStuff.UnitTests.Core.Model.ConfigurationRepository.LoadOperation
 
     [Test]
     public void TestConfigurationIsNullThrows() {
-      mContext.ExecutionConfiguration = null;
+      mContext.ExecutionConfigurationDTO = null;
       var ex = Assert.Throws<DeleteStuffException>(() => mStage.Execute(mContext));
       Assert.That(ex.Message, Is.EqualTo("deletestuff.json does not contain a valid configuration: configuration is null"));
     }
 
     [Test]
     public void TestConfigurationSpecsAreNull() {
-      mContext.ExecutionConfiguration.PathSpecifications = null;
+      mContext.ExecutionConfigurationDTO.PathSpecifications = null;
       var ex = Assert.Throws<DeleteStuffException>(() => mStage.Execute(mContext));
       Assert.That(ex.Message, Is.EqualTo("deletestuff.json does not contain a valid configuration: specs are null"));
     }

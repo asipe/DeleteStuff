@@ -8,7 +8,7 @@ namespace DeleteStuff.Core.Model.ConfigurationRepository.LoadPathSpecsOperation.
     }
 
     protected override void DoExecute(Context context) {
-      context.Configuration = mOperation.Load();
+      context.ExecutionConfiguration = mOperation.Load();
     }
 
     private readonly ILoadOperation mOperation;

@@ -1,6 +1,6 @@
 ﻿using DeleteStuff.Core.Commands.Config.List;
 using DeleteStuff.Core.Commands.Config.List.Stages;
-using DeleteStuff.Core.External;
+using DeleteStuff.Core.Model;
 using DeleteStuff.Core.Output;
 using Moq;
 using NUnit.Framework;
@@ -15,13 +15,13 @@ namespace DeleteStuff.UnitTests.Core.Commands.Config.List.Stages {
 
     [Test]
     public void TestExecuteWithEmptyConfigEchosNothing() {
-      mContext.ExecutionConfiguration.PathSpecifications = CM<PathSpecificationDTO>(0);
+      mContext.ExecutionConfiguration.PathSpecifications = CM<PathSpecification>(0);
       mStage.Execute(mContext);
     }
 
     [Test]
     public void TestExecuteWithSingleSpecEchos() {
-      mContext.ExecutionConfiguration.PathSpecifications = CM<PathSpecificationDTO>(1);
+      mContext.ExecutionConfiguration.PathSpecifications = CM<PathSpecification>(1);
       mObserver.Setup(o => o.OnInfo(mContext.ExecutionConfiguration.PathSpecifications[0].Name));
       mObserver.Setup(o => o.OnInfo("   " + mContext.ExecutionConfiguration.PathSpecifications[0].Includes[0]));
       mObserver.Setup(o => o.OnInfo("   " + mContext.ExecutionConfiguration.PathSpecifications[0].Includes[1]));

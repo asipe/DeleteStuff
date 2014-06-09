@@ -1,5 +1,4 @@
-﻿using DeleteStuff.Core.External;
-using SupaCharge.Core.Patterns;
+﻿using SupaCharge.Core.Patterns;
 
 namespace DeleteStuff.Core.Model.ConfigurationRepository.LoadOperation {
   public class Operation : ILoadOperation {
@@ -7,7 +6,7 @@ namespace DeleteStuff.Core.Model.ConfigurationRepository.LoadOperation {
       mPipeline = pipeline;
     }
 
-    public ExecutionConfigurationDTO Load() {
+    public ExecutionConfiguration Load() {
       var context = new Context();
       mPipeline.Execute(context);
       return context.ExecutionConfiguration;

@@ -21,18 +21,18 @@ namespace DeleteStuff.UnitTests.Core.Model.ConfigurationRepository.LoadPathSpecs
     [Test]
     public void TestExecuteWithSingleSpecNameThatIsAvailableSetsSpecs() {
       mContext.Names = CM<string>(1);
-      mContext.Configuration.PathSpecifications[0].Name = mContext.Names[0];
+      mContext.Names[0] = mContext.ExecutionConfiguration.PathSpecifications[0].Name;
       mStage.Execute(mContext);
-      AssertAreEqual(mContext.PathSpecifications, BA(mContext.Configuration.PathSpecifications[0]));
+      AssertAreEqual(mContext.PathSpecifications, BA(mContext.ExecutionConfiguration.PathSpecifications[0]));
     }
 
     [Test]
     public void TestExecuteWithMultipleSpecNamesThatareAvailableSetsSpecs() {
-      mContext.Configuration.PathSpecifications[0].Name = mContext.Names[0];
-      mContext.Configuration.PathSpecifications[1].Name = mContext.Names[1];
-      mContext.Configuration.PathSpecifications[2].Name = mContext.Names[2];
+      mContext.Names[0] = mContext.ExecutionConfiguration.PathSpecifications[0].Name;
+      mContext.Names[1] = mContext.ExecutionConfiguration.PathSpecifications[1].Name;
+      mContext.Names[2] = mContext.ExecutionConfiguration.PathSpecifications[2].Name;
       mStage.Execute(mContext);
-      AssertAreEqual(mContext.PathSpecifications, mContext.Configuration.PathSpecifications);
+      AssertAreEqual(mContext.PathSpecifications, mContext.ExecutionConfiguration.PathSpecifications);
     }
 
     [Test]

@@ -1,5 +1,5 @@
 ﻿using System;
-using DeleteStuff.Core.External;
+using DeleteStuff.Core.Model;
 using DeleteStuff.Core.Output;
 using SupaCharge.Core.Patterns;
 
@@ -14,7 +14,7 @@ namespace DeleteStuff.Core.Commands.Stats.Stages {
       Echo("total");
     }
 
-    private void EchoSpec(PathSpecificationDTO specification) {
+    private void EchoSpec(PathSpecification specification) {
       Echo(specification.Name);
     }
 
