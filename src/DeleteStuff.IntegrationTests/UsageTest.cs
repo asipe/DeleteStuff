@@ -94,7 +94,6 @@ namespace DeleteStuff.IntegrationTests {
                                                                                                                    },
                                                                                           new PathSpecificationDTO {
                                                                                                                      Name = "project4",
-                                                                                                                     Includes = new string[0],
                                                                                                                      References = new[] {"project0"}
                                                                                                                    },
                                                                                           new PathSpecificationDTO {
