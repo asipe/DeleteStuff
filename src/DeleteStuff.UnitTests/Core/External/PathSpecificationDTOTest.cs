@@ -10,7 +10,6 @@ namespace DeleteStuff.UnitTests.Core.External {
       Assert.That(spec.Name, Is.Null);
       Assert.That(spec.Includes, Is.Null);
       Assert.That(spec.References, Is.Null);
-      Assert.That(spec.Includes, Is.Null);
     }
   }
 }
