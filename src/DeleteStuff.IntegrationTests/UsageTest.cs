@@ -195,7 +195,7 @@ namespace DeleteStuff.IntegrationTests {
                                                                                           new PathSpecificationDTO {
                                                                                                                      Name = "project0",
                                                                                                                      Includes = new[] {
-                                                                                                                                        Helper.DataDirectory.GetDirectory("proj0")
+                                                                                                                                        Helper.DataDirectory.GetDirectory(@"proj0\*.*")
                                                                                                                                       }
                                                                                                                    }
                                                                                         }
@@ -221,13 +221,13 @@ namespace DeleteStuff.IntegrationTests {
                                                                                           new PathSpecificationDTO {
                                                                                                                      Name = "project0",
                                                                                                                      Includes = new[] {
-                                                                                                                                        Helper.DataDirectory.GetDirectory("proj0")
+                                                                                                                                        Helper.DataDirectory.GetDirectory(@"proj0\*.*")
                                                                                                                                       }
                                                                                                                    },
                                                                                           new PathSpecificationDTO {
                                                                                                                      Name = "project1",
                                                                                                                      Includes = new[] {
-                                                                                                                                        Helper.DataDirectory.GetDirectory("proj1")
+                                                                                                                                        Helper.DataDirectory.GetDirectory(@"proj1\*.*")
                                                                                                                                       }
                                                                                                                    }
                                                                                         }
@@ -244,6 +244,45 @@ namespace DeleteStuff.IntegrationTests {
                                                                        "",
                                                                        "total",
                                                                        "   0 files",
+                                                                       "   0 bytes",
+                                                                       "")));
+      Assert.That(result.StandardError, Is.Empty);
+    }
+
+    [Test]
+    [Ignore("In Progress")]
+    public void TestStatsWithMultipleSpecsWithFiles() {
+      Helper.DataDirectory.CreateDirectories("proj0", "proj1");
+      Helper.DataDirectory.CreateFiles(@"proj0\proj0-file1.txt");
+      Helper.DataDirectory.CreateFiles(@"proj1\proj1-file1.txt");
+      Helper.WriteJsonConfig(new ExecutionConfigurationDTO {
+                                                             PathSpecifications = new[] {
+                                                                                          new PathSpecificationDTO {
+                                                                                                                     Name = "project0",
+                                                                                                                     Includes = new[] {
+                                                                                                                                        Helper.DataDirectory.GetDirectory(@"proj0\*.*")
+                                                                                                                                      }
+                                                                                                                   },
+                                                                                          new PathSpecificationDTO {
+                                                                                                                     Name = "project1",
+                                                                                                                     Includes = new[] {
+                                                                                                                                        Helper.DataDirectory.GetDirectory(@"proj1\*.*")
+                                                                                                                                      }
+                                                                                                                   }
+                                                                                        }
+                                                           });
+      var result = Helper.ProcessExecutor.Start("stats", "project0", "project1");
+      Assert.That(result.ExitCode, Is.EqualTo(0));
+      Assert.That(result.StandardOutput, Is.EqualTo(Helper.BuildOutput("project0",
+                                                                       "   1 files",
+                                                                       "   0 bytes",
+                                                                       "",
+                                                                       "project1",
+                                                                       "   1 files",
+                                                                       "   0 bytes",
+                                                                       "",
+                                                                       "total",
+                                                                       "   1 files",
                                                                        "   0 bytes",
                                                                        "")));
       Assert.That(result.StandardError, Is.Empty);
