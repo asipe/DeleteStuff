@@ -8,6 +8,7 @@ namespace DeleteStuff.UnitTests.Core.External {
     public void TestDefaults() {
       var spec = new PathSpecificationDTO();
       Assert.That(spec.Name, Is.Null);
+      Assert.That(spec.BaseDirectory, Is.Null);
       Assert.That(spec.Includes, Is.Null);
       Assert.That(spec.References, Is.Null);
     }
