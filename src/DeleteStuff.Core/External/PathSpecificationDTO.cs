@@ -3,6 +3,5 @@
     public string Name{get;set;}
     public string BaseDirectory{get;set;}
     public string[] Includes{get;set;}
-    public string[] References{get;set;}
   }
 }
