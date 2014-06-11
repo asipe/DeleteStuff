@@ -34,7 +34,7 @@ namespace DeleteStuff.Core.Model.PathSpecificationBuilder {
     }
 
     private static PathSpecification BuildSpec(IEnumerable<PathSpecificationDTO> all, PathSpecificationDTO specDTO) {
-      return new PathSpecification(specDTO.Name, GetIncludes(all, specDTO));
+      return new PathSpecification(specDTO.Name, specDTO.BaseDirectory, GetIncludes(all, specDTO));
     }
 
     private static IEnumerable<string> GetArrayOrEmpty(string[] values) {

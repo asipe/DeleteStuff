@@ -71,14 +71,17 @@ namespace DeleteStuff.IntegrationTests {
                                                              PathSpecifications = new[] {
                                                                                           new PathSpecificationDTO {
                                                                                                                      Name = "project0",
+                                                                                                                     BaseDirectory = "bdir0",
                                                                                                                      Includes = new string[0]
                                                                                                                    },
                                                                                           new PathSpecificationDTO {
                                                                                                                      Name = "project1",
+                                                                                                                     BaseDirectory = "bdir1",
                                                                                                                      Includes = new[] {@"c:\project1\bin\*.exe"}
                                                                                                                    },
                                                                                           new PathSpecificationDTO {
                                                                                                                      Name = "project2",
+                                                                                                                     BaseDirectory = "bdir2",
                                                                                                                      Includes = new[] {
                                                                                                                                         @"c:\project2\bin\*.exe",
                                                                                                                                         @"c:\project2\obj\*.dll"
@@ -86,6 +89,7 @@ namespace DeleteStuff.IntegrationTests {
                                                                                                                    },
                                                                                           new PathSpecificationDTO {
                                                                                                                      Name = "project3",
+                                                                                                                     BaseDirectory = "bdir3",
                                                                                                                      Includes = new[] {
                                                                                                                                         @"c:\project3\bin\*.exe",
                                                                                                                                         @"c:\project3\obj\*.dll",
@@ -94,10 +98,12 @@ namespace DeleteStuff.IntegrationTests {
                                                                                                                    },
                                                                                           new PathSpecificationDTO {
                                                                                                                      Name = "project4",
+                                                                                                                     BaseDirectory = "bdir4",
                                                                                                                      References = new[] {"project0"}
                                                                                                                    },
                                                                                           new PathSpecificationDTO {
                                                                                                                      Name = "project5",
+                                                                                                                     BaseDirectory = "bdir5",
                                                                                                                      Includes = new string[0],
                                                                                                                      References = new[] {
                                                                                                                                           "project1",
@@ -106,6 +112,7 @@ namespace DeleteStuff.IntegrationTests {
                                                                                                                    },
                                                                                           new PathSpecificationDTO {
                                                                                                                      Name = "project6",
+                                                                                                                     BaseDirectory = "bdir6",
                                                                                                                      Includes = new[] {
                                                                                                                                         @"c:\project3\bin\*.exe",
                                                                                                                                         @"c:\project3\obj\*.dll",
@@ -118,6 +125,7 @@ namespace DeleteStuff.IntegrationTests {
                                                                                                                    },
                                                                                           new PathSpecificationDTO {
                                                                                                                      Name = "project7",
+                                                                                                                     BaseDirectory = "bdir7",
                                                                                                                      Includes = new string[0],
                                                                                                                      References = new[] {
                                                                                                                                           "project0",
@@ -194,6 +202,7 @@ namespace DeleteStuff.IntegrationTests {
                                                              PathSpecifications = new[] {
                                                                                           new PathSpecificationDTO {
                                                                                                                      Name = "project0",
+                                                                                                                     BaseDirectory = "bdir0",
                                                                                                                      Includes = new[] {
                                                                                                                                         Helper.DataDirectory.GetDirectory(@"proj0\*.*")
                                                                                                                                       }
@@ -220,12 +229,14 @@ namespace DeleteStuff.IntegrationTests {
                                                              PathSpecifications = new[] {
                                                                                           new PathSpecificationDTO {
                                                                                                                      Name = "project0",
+                                                                                                                     BaseDirectory = "bdir0",
                                                                                                                      Includes = new[] {
                                                                                                                                         Helper.DataDirectory.GetDirectory(@"proj0\*.*")
                                                                                                                                       }
                                                                                                                    },
                                                                                           new PathSpecificationDTO {
                                                                                                                      Name = "project1",
+                                                                                                                     BaseDirectory = "bdir1",
                                                                                                                      Includes = new[] {
                                                                                                                                         Helper.DataDirectory.GetDirectory(@"proj1\*.*")
                                                                                                                                       }
@@ -259,12 +270,14 @@ namespace DeleteStuff.IntegrationTests {
                                                              PathSpecifications = new[] {
                                                                                           new PathSpecificationDTO {
                                                                                                                      Name = "project0",
+                                                                                                                     BaseDirectory = "bdir0",
                                                                                                                      Includes = new[] {
                                                                                                                                         Helper.DataDirectory.GetDirectory(@"proj0\*.*")
                                                                                                                                       }
                                                                                                                    },
                                                                                           new PathSpecificationDTO {
                                                                                                                      Name = "project1",
+                                                                                                                     BaseDirectory = "bdir1",
                                                                                                                      Includes = new[] {
                                                                                                                                         Helper.DataDirectory.GetDirectory(@"proj1\*.*")
                                                                                                                                       }
